@@ -1,0 +1,35 @@
+Relatório 1 – Estrutura
+•	Descrição do projeto (breve!!)
+o	O que é?
+o	Objetivos concretos da aplicação (features mais interessantes).
+o	Licenças do jogo (ex: Apache 2.0).
+•	Processo de desenvolvimento
+o	Estragégias (ex: princípios Agile) e modelos adotados (ex: Behavior Driven Development, Software Prototyping).
+o	Aréas a que se dedicam os contribuidores (ex: Arquitetura, Design, GUI, ….).
+o	Funcionalidades do Git usadas (ex: sistema de issues, pull requests, milestones…).
+o	História da aplicação (data de criação, # contribuidores, identificação dos contribuidores mais importantes e da comunidade [onde se encontra, que redes sociais usa?], regularidade de commits [incluir gráfico de regularidade de commits]).
+o	Estrutura do repositório (branches, …).
+•	Análise crítica
+o	Começar por mencionar pontos sobre os quais vai incidir a análise!
+o	Alguns pontos:
+	Atividade
+•	Projeto está ativo?
+•	Issues têm sido resolvidas?
+•	Issues têm a tag Contributor-friendly (incentiva contrib’s por parte de terceiros, que podem adicionar o seu valor [conhecimentos técnicos, …] ao projeto).
+	Organização
+•	Estrutura do repositório
+o	Usa branches? (para permitir o desenvolvimento em paralelo de features, de forma independante e organizada).
+•	Estrutura do código
+o	Boa modularização em pacotes?
+o	Código claro e comentado/documentado?
+o	Dociment
+	Desenvolvimento
+•	Usam um plano/modelo bem definido?
+•	Os milestones estão sempre a mudar?
+•	Os commits têm mensagens perteninentes que elucidam o que foi acrescentado ao projeto? (qualidade dos commits)
+•	Conclusões
+o	
+•	Links externos (link para o repositório original).
+•	Contribuição do grupo
+o	<nome>: <percentagem de contribuição>, <número médio de horas dispendidas>
+•	Identificação do grupo 
