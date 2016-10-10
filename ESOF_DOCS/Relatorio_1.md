@@ -34,3 +34,27 @@ A principal linguagem de programação usada é Java, que no momento da elabora�
 
 Tem um total de 64 contribuidores, 8 dos quais estiveram presentes durante todo o desenvolvimento e são os responsáveis pelas contribuições mais relevantes. Embora frequentemente atualizado, já é um projeto bastante completo, por isso não está em grande desenvolvimento de momento.
 
+### Processo de Desenvolvimento
+
+Um processo de desenvolvimento de software define um conjunto estruturado de atividades para desenvolver um sistema de software. Seguir um processo de desenvolvimento aumenta a eficiência e consistência do trabalho de desenvolvimento do sistema e permite detetar aspetos a melhorar.
+
+Vamos começar por falar de alguns princípios gerais do desenvolvimento do projeto para o World Edit apontados pelo seu principal contribuidor.
+
+Logo após, vamos brevemente apresentar a comunidade do WorldEdit.
+
+De seguida, vamos ver com mais detalhe como funciona o sistema de contribuições para o projeto.
+
+Subsequentemente, vamos nos debruçar sobre o modelos que vão ao encontro do processo de software adotado.
+
+Por fim, vamos analisar a evolução do projeto e a estrutura do repositório.     
+
+#### Aspetos gerais
+
+Segundo Albert Pham (conhecido por “sk89q” no *Github*), o principal contribuidor do projeto, o processo de desenvolvimento deste projeto rege-se pelos seguintes princípios:
+- Pequenas alterações ao código são *commited* diretamente no branch principal;
+- Grandes alterações são *commited* para *branches* individuais e são desenvolvidas ao longo do tempo nesse mesmo branch até à funcionalidade estar completa. Quando essa funcionalidade está pronta para ser *merged*, é criado um *pull request* e o código é revisto para proceder ao merge com o *branch* principal (*master*), se for aprovado;
+- Testes unitários são corridos frequentemente, tal como ferramentas que permitem detectar se existe algo suspeito no código (para garantir segurança);
+- Sugestões de novas funcionalidades e reports de bugs são registados no *issue tracker*;
+- Novas versões do *plugin* são lançadas periodicamente.
+
+
