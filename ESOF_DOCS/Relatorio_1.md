@@ -1,9 +1,13 @@
 # ESOF - Relatório 1
 ## WorldEdit
  
-### Descrição do Projecto
- 
+### Descrição do Projecto 
+
 O WorldEdit é um *plugin* para o jogo Minecraft que permite editar o mundo 3D do jogo através de funcionalidades novas fornecidas por este plugin.
+
+<img src="resources/WE_logo.png" alt="Uma imagem." align="centered"/>
+
+*Figura 1 - Logotipo do World Edit*
 
 O Minecraft é um jogo do tipo *sandbox* e *openworld* onde o jogador pode construir qualquer coisa num mundo 3D gerado aleatoriamente a partir de blocos/cubos de diferentes materiais (*voxels*). Os jogadores podem ainda explorar o mundo, recolher recursos e combater contra inimigos ou outros jogadores.
 
