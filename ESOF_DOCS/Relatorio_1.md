@@ -57,4 +57,46 @@ Segundo Albert Pham (conhecido por “sk89q” no *Github*), o principal contrib
 - Sugestões de novas funcionalidades e reports de bugs são registados no *issue tracker*;
 - Novas versões do *plugin* são lançadas periodicamente.
 
+#### Comunidade
+
+A comunidade do WorldEdit é composta pelos __colaboradores do projeto__ e por __quem usa__ este *plugin*. A comunidade tem uma grande facilidade de comunicação com os autores do projeto, sendo frequente sugerirem __novas funcionalidades__, __tirarem dúvidas__ ou fazerem __*reports* de bugs__ que encontram no *plugin*.
+Para contacto direito com o autor principal do projeto Albert Pham, um dos meios de comunicação disponíveis é um __canal *IRC*__, comum a todos os seus <a href=http://skq.me/irc/irc.esper.net/sk89q>projetos</a>, e o seu <a href=http://twitter.com/sk89q>__Twitter pessoal__</a>.
+Existe também um <a href=http://forum.enginehub.org/>__fórum__</a>, onde os membros da comunidade comunicam regularmente entre si e com os colaboradores do projeto sobre assuntos diversos, sendo os mais comuns dúvidas acerca de funcionalidades do *plugin* e *report* de erros.
+Existe ainda um <a href=http://dev.enginehub.org/youtrack/issues/WORLDEDIT?p=0&f=false>__*issue tracker*__</a>, onde grande parte dos *reports* são sobre __erros e atualizações do *plugin*__, ou tratam-se de propostas para __novas funcionalidades__. Cada __issue__ é acompanhado de informação acerca da __plataforma em questão__ (se alguma) e do seu __estado__, por exemplo, não serem capazes de reproduzir novamente um *bug*, já terem resolvido o problema, etc.
+Por fim, existe também o __site oficial do *plugin*__ onde podemos encontrar informações acerca deste, videos de como o utilizar, como fazer download e instalação, questões frequentes, __documentação do *plugin*__, fórum de discussão e *issue tracker* já mencionados e o código fonte do projeto.
+
+#### Contribuições
+
+__Qualquer membro__ da comunidade __pode contribuir__ para este projeto. No entanto, as regras que os autores do projeto definem são bastante rígidas. Estas regras estão definidas num __ficheiro da pasta principal__, __CONTRIBUTING.md__, que por sua vez é referido no __README.md__ do projeto.
+Um exemplo notável de uma regra a seguir para que uma contribuição seja aceite é que o novo código siga as __convenções de programação da Oracle__. A título de exemplo, uma convenção recomendada para programação em Java (mas que pode ser estendida para outras linguagens semelhantes) é de declarar apenas uma variável em cada linha de código (isto incentiva a escrita de comentários a explicar o papel dessa variável no programa). 
+Outra regra que deve ser seguida pelos contribuidores é que o código deve ter sido devidamente testado.
+Depois de __feito um *pull request*__, o código é __testado__ novamente na totalidade com testes unitários por parte de outros membros do projeto, antes de ser __aceite e *merged* com o *branch* principal__.
+
+#### Modelos de processo de *software* usados
+
+Um modelo de processo de *software* é uma __representação abstrata de um processo de desenvolvimento de *software*__.
+O projeto rege-se segundo um modelo próximo do __*Incremental Development and Delivery*__ que consiste em desenvolver o projeto __incrementalmente e iterativamente__, e avaliar cada incremento antes de proceder para a próxima tarefa. Cada incremento consiste no __desenvolvimento de uma ou mais *features*__ ou na __resolução de um ou vários *bugs*__, reportados através do *issue tracker* do projeto.
+Tal como referido na secção dos “Princípios gerais” do desenvolvimento do software deste projeto, várias funcionalidades novas foram sendo __desenvolvidas ao mesmo tempo em *branches* diferentes__, segundo o __modelo *Waterfall*__, onde a funcionalidades são definidas, é feito o *design* do *software*, implementado o código, são feitos testes unitários, é feita a integração e testes no sistema, e por fim é __colocada a funcionalidade no *branch* principal__.
+ O projeto também segue de perto vários princípios do __desenvolvimento ágil__ (*Agile*) de *software* pois o *software* encontra-se em __constante evolução__ (*commits* ocorrem a um ritmo semanal, nos períodos mais ativos), incorporando novas *features* e corrigindo *bugs*, graças a uma rede de dezenas de colaboradores que cooperam entre si e estabelecem diálogo a um ritmo frequente através de discussões em cada tópico do *issue tracker* ou de cada *pull request*, por exemplo.
+ 
+#### Evolução do projeto
+
+O projeto teve mais atividade nos __primeiros 2 anos__ de desenvolvimento do *plugin*, entre 2010 e 2011, e voltou a ter __grande atividade em 2014__. 
+De momento, __o projeto não se encontra muito ativo__, tendo sido já __intensivamente desenvolvido no passado__ e portanto trata-se um __projeto bastante completo__.
+No momento da elaboração deste relatório, o commit mais recente para o *master branch* é do dia 2 de Setembro de 2016, e os últimos *commits* relacionam-se com pequenas correções do código e atualizações para a plataforma Forge, uma *API* de *modding*, que torna mais fácil criar novos *mods* e verificar se são compatíveis com *mods* já existentes.
+<figure>
+ <img src="resources/graph_commits.png" alt="Graph Commits" align="centered"/>
+ <figcaption>Figura 1: Evolução dos *commits* do projeto ao longo dos anos.</figcaption>
+</figure>
+
+#### Organização do repositório
+
+Existem um total de __27 *branches*__, relativas a funcionalidades que estão a ser desenvolvidas à parte. Após o desenvolvimento e posterior análise do código, o *branch* é *merged* com o *branch* principal.
+Existem também um total de __103 *releases*__, correspondentes a lançamentos *alpha*, beta e oficiais do plugin. As descrições detalhadas de todas as funcionalidades adicionadas em cada lançamento estão registadas num ficheiro __CHANGELOG.txt__ no *branch* principal.
+
+
+
+
+
+
 
