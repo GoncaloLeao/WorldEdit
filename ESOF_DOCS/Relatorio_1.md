@@ -84,6 +84,7 @@ Tal como referido na secção dos “Princípios gerais” do desenvolvimento do
 O projeto teve mais atividade nos __primeiros 2 anos__ de desenvolvimento do *plugin*, entre 2010 e 2011, e voltou a ter __grande atividade em 2014__. 
 De momento, __o projeto não se encontra muito ativo__, tendo sido já __intensivamente desenvolvido no passado__ e portanto trata-se um __projeto bastante completo__.
 No momento da elaboração deste relatório, o commit mais recente para o *master branch* é do dia 2 de Setembro de 2016, e os últimos *commits* relacionam-se com pequenas correções do código e atualizações para a plataforma Forge, uma *API* de *modding*, que torna mais fácil criar novos *mods* e verificar se são compatíveis com *mods* já existentes.
+
  <img src="resources/graph_commits.png" alt="Graph Commits" align="centered"/>
  
 *Figura 2 - Evolução dos *commits* do projeto ao longo dos anos.*
