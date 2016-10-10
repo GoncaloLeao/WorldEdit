@@ -87,7 +87,7 @@ No momento da elaboração deste relatório, o commit mais recente para o *maste
 
  <img src="resources/graph_commits.png" alt="Graph Commits" align="centered"/>
  
-*Figura 2 - Evolução dos *commits* do projeto ao longo dos anos.*
+*Figura 2 - Evolução dos commits do projeto ao longo dos anos.*
 
 #### Organização do repositório
 
