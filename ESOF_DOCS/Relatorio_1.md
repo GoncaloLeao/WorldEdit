@@ -3,19 +3,15 @@
  
 ### Descrição do Projecto 
 
-O WorldEdit é um __*plugin* para o jogo Minecraft__ que permite __editar o mundo 3D__ do jogo através de funcionalidades novas fornecidas por este plugin.
+O WorldEdit é um __*plugin* para o jogo Minecraft__ que permite __editar o mundo 3D do jogo de uma forma mais rápida e eficiente__ através de novas funcionalidades.
 
-<img src="resources/WE_logo.png" alt="Uma imagem." align="centered"/>
+<img src="resources/WE_logo.png" alt="Uma imagem."/>
 
 *Figura 1 - Logotipo do World Edit*
 
 O Minecraft é um __jogo do tipo *sandbox* e *openworld*__ onde o jogador pode construir qualquer coisa num mundo 3D gerado aleatoriamente a partir de blocos/cubos de diferentes materiais (__*voxels*__). Os jogadores podem ainda explorar o mundo, recolher recursos e combater contra inimigos ou outros jogadores.
 
 Este pode ser jogado tanto no modo *singleplayer* como em *multiplayer* e __suporta *plugins*__, uma __extensão do servidor que adiciona novas funcionalidades ao jogo ou modifica as já existentes__ sem que seja necessário um *client custom* para aceder ao mesmo (o que o diferencia de um *mod*).
-
-O projeto que vamos analisar é __*open source*__ e está sob a licença GNU Lesser General Public License v3.
-
-O objetivo deste *plugin* é fornecer um __modo mais rápido e eficiente de editar o mundo do jogo__.
 
 Das funcionalidades de edição do mundo, podem-se destacar:
 - __Criar construções de uma forma mais rápida;__
@@ -26,9 +22,11 @@ Das funcionalidades de edição do mundo, podem-se destacar:
 - __Teletransportar o jogador para outras áreas apenas clicando ou usando um comando na consola;__
 - __Escolher uma área e restaurar o seu estado anterior, através de *backups*.__
 
+O projeto que vamos analisar é __*open source*__ e está sob a licença GNU Lesser General Public License v3.
+
 O projeto foi inicializado em Setembro de 2010 por Albert Pham (“sk89q”), que juntamente com outros três utilizadores (“TomyLobo”, “wizjany” e “ zml2008”), tiveram o maior impacto no desenvolvimento do projeto.
 
-Foi lançada a primeira versão “WorldEdit 4.6” em Agosto de 2011. Até agora, este *plugin* conta com __mais 15 milhões de *downloads*__, sendo a __versão “WorldEdit 6.1”__ a mais bem-sucedida, lançada em 2015, com 2 milhões de *downloads*.
+A primeira *release* do projeto no Github é a versão 0.4, lançada no dia 3 de Outubro de 2010. Até agora, este *plugin* conta com __mais 15 milhões de *downloads*__, sendo a __versão “WorldEdit 6.1”__ a mais bem-sucedida, lançada em 2015, com 2 milhões de *downloads*.
 
 A principal linguagem de programação usada é __Java__, que no momento da elaboração deste relatório, engloba cerca de 99,2% segundo o Github. Os 0.8% restantes do código estão escritos usando a linguagem de programação __Javascript__, e consistem em *craftscripts*. Um *craftscript* é um ficheiro que permite a execução, através de um único comando, de uma tarefa complexa de edição do mundo do *Minecraft*, como a geração aleatória de um labirinto.
 
@@ -50,7 +48,7 @@ Por fim, vamos analisar a __evolução do projeto__ e a __estrutura do repositó
 
 #### Aspetos gerais
 
-Segundo __Albert Pham (conhecido por “sk89q” no *Github*), o principal contribuidor do projeto,__ o processo de desenvolvimento deste projeto rege-se pelos seguintes princípios:
+Segundo __Albert Pham, o principal contribuidor do projeto e conhecido por “sk89q” no *Github*,__ o processo de desenvolvimento deste projeto rege-se pelos seguintes princípios:
 - __Pequenas alterações ao código são *commited* diretamente no branch principal;__
 - __Grandes alterações são *commited* para *branches* individuais e são desenvolvidas ao longo do tempo nesse mesmo branch até à funcionalidade estar completa. Quando essa funcionalidade está pronta para ser *merged*, é criado um *pull request* e o código é revisto para proceder ao merge com o *branch* principal (*master*), se for aprovado;__
 - __Testes unitários são corridos frequentemente, tal como ferramentas que permitem detectar se existe algo suspeito no código (para garantir segurança);__
