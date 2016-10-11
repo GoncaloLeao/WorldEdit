@@ -97,7 +97,7 @@ Existem também um total de __103 *releases*__, correspondentes a lançamentos *
 Vamos analisar o projeto WorldEdit segundo várias perspetivas, para tentar de alguma forma medir a sua __qualidade__. 
 Começamos por __avaliar as contribuições para o projeto__, desde a sua frequência e pertinência. 
 De seguida, __analisar-se-á a organização do projeto__, tanto ao nível do código, como do repositório.
-Por fim, __discutir-se-á o processo de software usado__. Em particular, discutir-se-á __porque é que é pertinente que o processo se aproxime do modelo incremental__, e explorar-se-á eventuais alternativas, salientando os seus prós e contras.
+Por fim, __discutir-se-á o processo de *software* usado__. Em particular, discutir-se-á __porque é que é pertinente que o processo se aproxime do modelo incremental__, e explorar-se-á eventuais alternativas, salientando os seus prós e contras.
 
 #### Contribuições
 ##### Frequência
@@ -115,19 +115,19 @@ No gráfico de *Code Frequency* no Github, podemos constatar que, __na maioria d
 Um fator que motiva a pertinência das contribuições é o __conjunto de regras para que uma contribuição seja aceite__ pelos restantes colaboradores do projeto. Estas regras são referidas no README.md do projeto e portanto são fáceis de encontrar por novos colaboradores que desejem contribuir para o projeto. 
 Na nossa opinião, as regras que foram definidas fazem sentido. Voltemos aos dois exemplos que foram dados na secção sobre “Contribuições” no “Processo de Desenvolvimento”.
 Por um lado, seguir uma convenção (neste caso, as convenções de programação da Oracle) traz a __vantagem de aumentar a legibilidade do código__ pois outros contribuidores que seguirem essas mesma regras perceberão o código melhor e de forma mais rápida.
-Por outro lado, a norma (trivial) que o código tenha de ser devidamente testado antes de ser submetido permite __minimizar a quantidade de bugs que são introduzidos no software__.
+Por outro lado, a norma (trivial) que o código tenha de ser devidamente testado antes de ser submetido permite __minimizar a quantidade de *bugs* que são introduzidos no software__.
 
 #### Organização
 ##### Código
 
-Tal como fora mencionado antes, o __código segue um conjunto de normas específicas__ (como as “Oracle coding conventions”), o que aumenta a legibilidade do código (por todos os contribuidores adotarem essas convenções) e evita o que os contribuidores principais entendem ser más práticas de programação.
+Tal como fora mencionado antes, o __código segue um conjunto de normas específicas__ (como as *Oracle coding conventions*), o que aumenta a legibilidade do código (por todos os contribuidores adotarem essas convenções) e evita o que os contribuidores principais entendem ser más práticas de programação.
 A __estrutura dos pacotes do código__ (*packages*) está muito bem conseguida, o que diminui bastante as desvantagens trazidas pelo modelo de desenvolvimento incremental.
-Por exemplo, uma desvantagem do modelo de desenvolvimento incremental é que a estrutura da aplicação tem tendência a degradar-se à medida que vão sendo feitas incrementos. Contudo, dado que o projecto está dividido em *core/bukkit/forge/sponge*, o projecto nunca fica demasiado grande, pelo que acabam por não sofrer tanto com este efeito. 
+Por exemplo, uma desvantagem do modelo de desenvolvimento incremental é que a estrutura da aplicação tem tendência a degradar-se à medida que vão sendo feitas incrementos. Contudo, dado que o projecto está dividido em core/bukkit/forge/sponge, o projecto nunca fica demasiado grande, pelo que acabam por não sofrer tanto com este efeito. 
 Uma outra vantagem, que está ligada à primeira, é o facto que a __existência de um *core*__ (conjunto de código comum a todas as plataformas) também __ajuda a superar as dificuldades__, reduzindo os problemas de código duplicado característicos deste tipo de estratégia.
 
 #### Repositório
 ##### *Branches*
-Analisando o repositório podemos concluir que __é utilizado o *git branching model*, um modelo adequado ao projeto em causa__. Usa uma estrutura de *branches* que __permite o desenvolvimento paralelo de diferentes funcionalidades de uma forma mais independente, organizada e eficaz__. Estes *branches* são *merged* com o branch principal quando a funcionalidade tiver sido completamente desenvolvida e o seu código tiver sido testado intensivamente pelos autores do projeto.
+Analisando o repositório podemos concluir que __é utilizado o *git branching model*, um modelo adequado ao projeto em causa__. Usa uma estrutura de *branches* que __permite o desenvolvimento paralelo de diferentes funcionalidades de uma forma mais independente, organizada e eficaz__. Estes *branches* são *merged* com o *branch* principal quando a funcionalidade tiver sido completamente desenvolvida e o seu código tiver sido testado intensivamente pelos autores do projeto.
 ##### Documentação (do projeto)
 Na nossa opinião, o projeto encontra-se __bem documentado__. A pasta principal do projeto contém ficheiros .md (como README.md, CONTRIBUTING.md...) com informações que se encontram bem organizados e são claros nas mensagens que pretendem transmitir, o que torna o projeto mais __fácil de compreender e mais convidativo para quem quiser contribuir__.
 
@@ -138,9 +138,9 @@ Tal como se referiu anteriormente, acreditamos que o modelo adoptado pelos desen
 __Nós acreditamos que este modelo é o mais adequado__ tendo em conta a constante atualização do jogo Minecraft com novas versões e as atualizações que o plugin tem de ser sujeito para que se mantenha a par das novas funcionalidades requeridas pela comunidade do jogo. Além disso, este modelo torna mais fácil para novos membros contribuírem para o projeto dado que é mais intuitivo.
 	
 #### Comparação com o modelo *Waterfall*
-O modelo de desenvolvimento de software *Waterfall* __não é compatível__ com ambientes de desenvolvimento como no caso do nosso projeto, *WorldEdit*, que é um ambiente onde o __controlo de versão é aberto ao público e existe um ritmo alto de lançamento de novas versões__. 
+O modelo de desenvolvimento de software *Waterfall* __não é compatível__ com ambientes de desenvolvimento como no caso do nosso projeto, WorldEdit, que é um ambiente onde o __controlo de versão é aberto ao público e existe um ritmo alto de lançamento de novas versões__. 
 Com efeito, este modelo não seria compatível com o projeto em estudo pois os seus __requisitos estão em constante evolução__, à medida que os contribuidores vão propondo novas funcionalidades. 
-Além disso, seguir o modelo em cascata à risca __impediria a sobreposição de atividades__ de levantamento de requisitos, implementação de features e teste do código. Assim, enquanto um colaborador estivesse a implementar uma nova função, outros não poderiam estar a testar outros aspetos da aplicação.
+Além disso, seguir o modelo em cascata à risca __impediria a sobreposição de atividades__ de levantamento de requisitos, implementação de *features* e teste do código. Assim, enquanto um colaborador estivesse a implementar uma nova função, outros não poderiam estar a testar outros aspetos da aplicação.
 
 #### Comparação com o modelo *Spiral*
 O modelo de desenvolvimento *Spiral* prevê um componente de cálculo de risco para além da típica prototipagem dos outros métodos ágeis, incluindo o utilizado no projeto.
@@ -148,7 +148,7 @@ Esta componente de __cálculo de risco não é necessária no contexto do produt
 Para além da desnecessidade desse paradigma, a implementação é custosa ou morosa, o que é __desinteressante num contexto não-profissional__.
 
 #### Comparação com o modelo *Software Prototyping*
-O modelo *Software Prototyping* prevê a existência de um protótipo descartável. Embora o modelo que determinamos como sendo __o mais próximo ao utilizado__, *Incremental Development and Delivery*, também utilize as perspectivas do modelo *Software Prototyping*, no caso do IDD, o protótipo é uma base sobre qual se itera.
+O modelo *Software Prototyping* prevê a existência de um protótipo descartável. Embora o modelo que determinamos como sendo __o mais próximo ao utilizado__, *Incremental Development and Delivery*, também utilize as perspectivas do modelo *Software Prototyping*, no caso do *IDD*, o protótipo é uma base sobre qual se itera.
 Se *Software Prototyping* fosse o modelo utilizado, para cada funcionalidade ou melhoria que se achasse necessária, criava-se o protótipo para essa alteração como prova de conceito, e se fosse aceite, desenvolver-se-ia o projecto do início com este novo aspecto em consideração. Com efeito, mesmo que o protótipo fosse aprovado, este seria uma reprodução de qualidade inferior à de um produto final. O desenvolvimento da versão final dessa alteração __iria criar ainda mais um atraso__, para além da reconstrução do projecto.
 
 ### Conclusões
