@@ -94,7 +94,38 @@ No momento da elaboração deste relatório, o commit mais recente para o *maste
 Existem um total de __27 *branches*__, relativas a funcionalidades que estão a ser desenvolvidas à parte. Após o desenvolvimento e posterior análise do código, o *branch* é *merged* com o *branch* principal.
 Existem também um total de __103 *releases*__, correspondentes a lançamentos *alpha*, beta e oficiais do plugin. As descrições detalhadas de todas as funcionalidades adicionadas em cada lançamento estão registadas num ficheiro __CHANGELOG.txt__ no *branch* principal.
 
+### Análise Crítica
 
+Vamos __analisar o projeto WorldEdit segundo várias perspetivas__, para tentar de alguma forma medir a sua __qualidade__. 
+Começamos por __avaliar as contribuições para o projeto__, desde a sua frequência e pertinência. 
+De seguida, __analisar-se-á a organização do projeto__, tanto ao nível do código, como do repositório.
+Por fim, __discutir-se-á o processo de software usado__. Em particular, discutir-se-á __porque é que é pertinente que o processo se aproxime do modelo incremental__, e explorar-se-á eventuais alternativas, salientando os seus prós e contras.
+
+#### Contribuições
+##### Frequência
+
+Tal como mencionado na secção “Evolução do projeto” em “Processo de Desenvolvimento”, __o projeto encontra-se agora numa fase menos ativa__ da sua existência. Nos últimos dois anos, foi havendo alguma atividade com a __adição de pequenas novas funcionalidades e correção de *bugs*__, muitas das vezes resultado do *feedback* da comunidade de jogadores. Esta atividade mostra que __o projeto continua a ser relevante para a comunidade de jogadores de Minecraft__.
+Nos últimos anos, registaram-se dois grande períodos de atividade. 
+Por um lado, a grande atividade durante os anos de 2010 e 2011, os dois primeiros do projeto, mostra que a __ideia subjacente ao projeto__ (permitir editar mundos do Minecraft de uma forma mais simples e eficaz) foi de __grande interesse para a comunidade__ do Minecraft.
+Por outro lado, a __época mais ativa de 2014 foi devido ao ganho de notoriedade da plataforma Spigot__, que permitiu integrar *plugins* no jogo Minecraft mais facilmente.
+
+
+##### Pertinência
+
+A maioria dos *commits* vêm acompanhados de uma __mensagem elucidativa__ sobre o que foi alterado ou adicionado ao projeto. 
+No gráfico de *Code Frequency* no Github, podemos constatar que, __na maioria das semanas, o número de adições de linhas de código é próximo do número de eliminações__. Isto deve-se ao facto que alterar uma linha de código é contabilizado pelo Git como uma eliminação seguida de uma adição. Assim, estas observações são coerentes com o facto que a __maioria dos *commits* referem-se a correções de erros__. Pelo que se pôde averiguar, outra __parte significativa dos commits correspondem a adaptações para novas versões do Minecraft__. Logo, podemos concluir que o __conteúdo de uma grande parte das contribuições foram relevantes para a evolução do projeto__.
+Um fator que motiva a pertinência das contribuições é o __conjunto de regras para que uma contribuição seja aceite__ pelos restantes colaboradores do projeto. Estas regras são referidas no README.md do projeto e portanto são fáceis de encontrar por novos colaboradores que desejem contribuir para o projeto. 
+Na nossa opinião, as regras que foram definidas fazem sentido. Voltemos aos dois exemplos que foram dados na secção sobre “Contribuições” no “Processo de Desenvolvimento”.
+Por um lado, seguir uma convenção (neste caso, as convenções de programação da Oracle) traz a __vantagem de aumentar a legibilidade do código__ pois outros contribuidores que seguirem essas mesma regras perceberão o código melhor e de forma mais rápida.
+Por outro lado, a norma (trivial) que o código tenha de ser devidamente testado antes de ser submetido permite __minimizar a quantidade de bugs que são introduzidos no software__.
+
+#### Organização
+##### Código
+
+Tal como fora mencionado antes, o __código segue um conjunto de normas específicas__ (como as “Oracle coding conventions”), o que aumenta a legibilidade do código (por todos os contribuidores adotarem essas convenções) e evita o que os contribuidores principais entendem ser más práticas de programação.
+A __estrutura dos pacotes do código__ (*packages*) está muito bem conseguida, o que diminui bastante as desvantagens trazidas pelo modelo de desenvolvimento incremental.
+Por exemplo, uma desvantagem do modelo de desenvolvimento incremental é que a estrutura da aplicação tem tendência a degradar-se à medida que vão sendo feitas incrementos. Contudo, dado que o projecto está dividido em *core/bukkit/forge/sponge*, o projecto nunca fica demasiado grande, pelo que acabam por não sofrer tanto com este efeito. 
+Uma outra vantagem, que está ligada à primeira, é o facto que a __existência de um *core*__ (conjunto de código comum a todas as plataformas) também __ajuda a superar as dificuldades__, reduzindo os problemas de código duplicado característicos deste tipo de estratégia.
 
 
 
