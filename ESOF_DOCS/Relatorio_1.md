@@ -96,7 +96,7 @@ Existem também um total de __103 *releases*__, correspondentes a lançamentos *
 
 ### Análise Crítica
 
-Vamos __analisar o projeto WorldEdit segundo várias perspetivas__, para tentar de alguma forma medir a sua __qualidade__. 
+Vamos analisar o projeto WorldEdit segundo várias perspetivas, para tentar de alguma forma medir a sua __qualidade__. 
 Começamos por __avaliar as contribuições para o projeto__, desde a sua frequência e pertinência. 
 De seguida, __analisar-se-á a organização do projeto__, tanto ao nível do código, como do repositório.
 Por fim, __discutir-se-á o processo de software usado__. Em particular, discutir-se-á __porque é que é pertinente que o processo se aproxime do modelo incremental__, e explorar-se-á eventuais alternativas, salientando os seus prós e contras.
@@ -127,7 +127,37 @@ A __estrutura dos pacotes do código__ (*packages*) está muito bem conseguida, 
 Por exemplo, uma desvantagem do modelo de desenvolvimento incremental é que a estrutura da aplicação tem tendência a degradar-se à medida que vão sendo feitas incrementos. Contudo, dado que o projecto está dividido em *core/bukkit/forge/sponge*, o projecto nunca fica demasiado grande, pelo que acabam por não sofrer tanto com este efeito. 
 Uma outra vantagem, que está ligada à primeira, é o facto que a __existência de um *core*__ (conjunto de código comum a todas as plataformas) também __ajuda a superar as dificuldades__, reduzindo os problemas de código duplicado característicos deste tipo de estratégia.
 
+#### Repositório
+##### *Branches*
+Analisando o repositório podemos concluir que __é utilizado o *git branching model*, um modelo adequado ao projeto em causa__. Usa uma estrutura de *branches* que __permite o desenvolvimento paralelo de diferentes funcionalidades de uma forma mais independente, organizada e eficaz__. Estes *branches* são *merged* com o branch principal quando a funcionalidade tiver sido completamente desenvolvida e o seu código tiver sido testado intensivamente pelos autores do projeto.
+##### Documentação (do projeto)
+Na nossa opinião, o projeto encontra-se __bem documentado__. A pasta principal do projeto contém ficheiros .md (como README.md, CONTRIBUTING.md...) com informações que se encontram bem organizados e são claros nas mensagens que pretendem transmitir, o que torna o projeto mais __fácil de compreender e mais convidativo para quem quiser contribuir__.
 
+### Processo de software
 
+#### Modelo usado
+Tal como se referiu anteriormente, acreditamos que o modelo adoptado pelos desenvolvedores deste projeto segue mais de perto o modelo *Incremental Development and Delivery*. 
+__Nós acreditamos que este modelo é o mais adequado__ tendo em conta a constante atualização do jogo Minecraft com novas versões e as atualizações que o plugin tem de ser sujeito para que se mantenha a par das novas funcionalidades requeridas pela comunidade do jogo. Além disso, este modelo torna mais fácil para novos membros contribuírem para o projeto dado que é mais intuitivo.
+	
+#### Comparação com o modelo *Waterfall*
+O modelo de desenvolvimento de software *Waterfall* __não é compatível__ com ambientes de desenvolvimento como no caso do nosso projeto, *WorldEdit*, que é um ambiente onde o __controlo de versão é aberto ao público e existe um ritmo alto de lançamento de novas versões__. 
+Com efeito, este modelo não seria compatível com o projeto em estudo pois os seus __requisitos estão em constante evolução__, à medida que os contribuidores vão propondo novas funcionalidades. 
+Além disso, seguir o modelo em cascata à risca __impediria a sobreposição de atividades__ de levantamento de requisitos, implementação de features e teste do código. Assim, enquanto um colaborador estivesse a implementar uma nova função, outros não poderiam estar a testar outros aspetos da aplicação.
 
+#### Comparação com o modelo *Spiral*
+O modelo de desenvolvimento *Spiral* prevê um componente de cálculo de risco para além da típica prototipagem dos outros métodos ágeis, incluindo o utilizado no projeto.
+Esta componente de __cálculo de risco não é necessária no contexto do produto do projeto__ visto que este é oferecido como uma ferramenta útil e de livre acesso, sem ganhos financeiros ou de reputação por parte dos colaboradores. Por outras palavras, o risco é virtualmente inexistente, pois __não há restrições de tempo nem de dinheiro__.
+Para além da desnecessidade desse paradigma, a implementação é custosa ou morosa, o que é __desinteressante num contexto não-profissional__.
 
+#### Comparação com o modelo *Software Prototyping*
+O modelo *Software Prototyping* prevê a existência de um protótipo descartável. Embora o modelo que determinamos como sendo __o mais próximo ao utilizado__, *Incremental Development and Delivery*, também utilize as perspectivas do modelo *Software Prototyping*, no caso do IDD, o protótipo é uma base sobre qual se itera.
+Se *Software Prototyping* fosse o modelo utilizado, para cada funcionalidade ou melhoria que se achasse necessária, criava-se o protótipo para essa alteração como prova de conceito, e se fosse aceite, desenvolver-se-ia o projecto do início com este novo aspecto em consideração. Com efeito, mesmo que o protótipo fosse aprovado, este seria uma reprodução de qualidade inferior à de um produto final. O desenvolvimento da versão final dessa alteração __iria criar ainda mais um atraso__, para além da reconstrução do projecto.
+
+### Conclusões
+__Apesar do *WorldEdit* ser um projecto *open-source* com muitos contribuidores, sentimos que existe um nível substancial de organização para este tipo de projeto__, sendo que os principais contribuidores são um grupo que nos parece __organizado e experiente__.
+Os colaboradores foram capazes de garantir que o código fosse testado e de boa qualidade.
+Concordamos que o modelo de entrega incremental utilizado (com algumas nuances inevitáveis num contexto prático) era o mais óbvio para este tipo de projecto e achamos que tomaram boas medidas (enunciadas anteriormente) para combater os problemas associados com este tipo de abordagem.
+
+### Bibliografia
+Um link para um documento com convenções de programação em Java:
+<a href="http://www.oracle.com/technetwork/java/codeconventions-150003.pdf">Java Conventions</a>
