@@ -14,6 +14,11 @@ O Minecraft é um __jogo do tipo *sandbox* e *openworld*__ onde o jogador pode c
 
 Este pode ser jogado tanto em modo *singleplayer* como em *multiplayer* e __suporta *plugins*__, uma __extensão do servidor que adiciona novas funcionalidades ao jogo ou modifica as já existentes__ sem que seja necessário um *client custom* para aceder ao mesmo (o que o diferencia de um *mod*).
 
+<p align="center">
+	<img src="resources/feature.png" alt="Transformação de uma região usando comandos do WorldEdit para que pareça mais natural." />
+	<em><br>Figura 2 - Transformação de uma região usando comandos do WorldEdit para que pareça mais "natural" (à esquerda - antes; à direita - depois)</em>
+</p>
+
 Das funcionalidades de edição do mundo, podem-se destacar:
 - __Criar construções de uma forma mais rápida;__
 - __Criar, substituir ou apagar centenas de blocos em segundos;__
@@ -22,6 +27,7 @@ Das funcionalidades de edição do mundo, podem-se destacar:
 - __Gerar esferas, cilindros, cubóides, etc;__
 - __Teletransportar o jogador para outras áreas apenas clicando ou usando um comando na consola;__
 - __Escolher uma área e restaurar o seu estado anterior, através de *backups*.__
+- __Alterar regiões para que se assemelhem mais a estruturas geradas naturalmente pelo jogo.__
 
 O projeto que vamos analisar é __*open source*__ e está sob a licença GNU Lesser General Public License v3.
 
@@ -86,8 +92,8 @@ De momento, __o projeto não se encontra muito ativo__, tendo sido já __intensi
 No momento da elaboração deste relatório, o commit mais recente para o *master branch* é do dia 2 de Setembro de 2016, e os últimos *commits* relacionam-se com pequenas correções do código e atualizações para a plataforma Forge, uma *API* de *modding*, que torna mais fácil criar novos *mods* e verificar se são compatíveis com *mods* já existentes.
 
 <p align="center">
-	<img src="resources/graph_commits.png" alt="Evolução dos commits do projeto ao longo dos anos"/>
-	<em><br>Figura 2 - Evolução dos commits do projeto ao longo dos anos</em>
+	<img src="resources/graph_commits.png" alt="Evolução dos commits do projeto ao longo dos anos."/>
+	<em><br>Figura 3 - Evolução dos commits do projeto ao longo dos anos</em>
 </p>
 
 #### Organização do repositório
@@ -114,7 +120,13 @@ Por outro lado, a __época mais ativa de 2014 foi devido ao ganho de notoriedade
 ##### Pertinência
 
 A maioria dos *commits* vêm acompanhados de uma __mensagem elucidativa__ sobre o que foi alterado ou adicionado ao projeto. 
-No gráfico de *Code Frequency* no Github, podemos constatar que, __na maioria das semanas, o número de adições de linhas de código é próximo do número de eliminações__. Isto deve-se ao facto que alterar uma linha de código é contabilizado pelo Git como uma eliminação seguida de uma adição. Assim, estas observações são coerentes com o facto que a __maioria dos *commits* referem-se a correções de erros__. Pelo que se pôde averiguar, outra __parte significativa dos commits correspondem a adaptações para novas versões do Minecraft__. Logo, podemos concluir que o __conteúdo de uma grande parte das contribuições foram relevantes para a evolução do projeto__.
+No gráfico de *Code Frequency* no Github (ver figura 4 abaixo), podemos constatar que, __na maioria das semanas, o número de adições de linhas de código é próximo do número de eliminações__. Isto deve-se ao facto que alterar uma linha de código é contabilizado pelo Git como uma eliminação seguida de uma adição. Assim, estas observações são coerentes com o facto que a __maioria dos *commits* referem-se a correções de erros__. Pelo que se pôde averiguar, outra __parte significativa dos commits correspondem a adaptações para novas versões do Minecraft__. Logo, podemos concluir que o __conteúdo de uma grande parte das contribuições foram relevantes para a evolução do projeto__.
+
+<p align="center">
+	<img src="resources/code_frequency.png" alt="Evolução dos commits do projeto ao longo dos anos."/>
+	<em><br>Figura 4 - Gráfico de code frequency do projeto - Número de adições e eliminações de linhas de código por semana</em>
+</p>
+
 Um fator que motiva a pertinência das contribuições é o __conjunto de regras para que uma contribuição seja aceite__ pelos restantes colaboradores do projeto. Estas regras são referidas no README.md do projeto e portanto são fáceis de encontrar por novos colaboradores que desejem contribuir para o projeto. 
 Na nossa opinião, as regras que foram definidas fazem sentido. Voltemos aos dois exemplos que foram dados na secção sobre “Contribuições” no “Processo de Desenvolvimento”.
 Por um lado, seguir uma convenção (neste caso, as convenções de programação da Oracle) traz a __vantagem de aumentar a legibilidade do código__ pois outros contribuidores que seguirem essas mesma regras perceberão o código melhor e de forma mais rápida.
@@ -160,24 +172,32 @@ Os colaboradores foram capazes de garantir que o código fosse testado e de boa 
 Concordamos que o modelo de entrega incremental utilizado (com algumas nuances inevitáveis num contexto prático) era o mais óbvio para este tipo de projecto e achamos que tomaram boas medidas (enunciadas anteriormente) para combater os problemas associados com este tipo de abordagem.
 
 ### Bibliografia
-Um link para um documento com convenções de programação em Java:
-<a href="http://www.oracle.com/technetwork/java/codeconventions-150003.pdf">Java Conventions</a>
+- Slides das aulas teóricas
+- Documento com informações úteis sobre modelos de desenvolvimento de software:
+<a href="http://www.ijcsi.org/papers/7-5-94-101.pdf">A Comparison Between Five Models Of Software Engineering</a>
+- Modelo apresentado pelos docentos de uma boa estruturação em *branches* do um projeto em Git: 
+<a href="http://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>
+- Documento com convenções de programação em Java:
+<a href="http://www.oracle.com/technetwork/java/codeconventions-150003.pdf">Java Code Conventions</a>
+- <a href="https://github.com/sk89q/WorldEdit">Repositório de sk89q do WorldEdit</a>
+- <a href="http://forum.enginehub.org/forums/worldedit.5/">Fórum do EngineHub para o WorldEdit</a>
+- <a href="https://wiki.sk89q.com/wiki/WorldEdit">Wiki do WorldEdit</a>
 
 ### Infomações
 
 #### Autores
 - Andreia Rodrigues (up201404691@fe.up.pt)
-	Percentagem de contribuição: 25%
-	Número aproximado de horas de trabalho: 7 horas
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 7 horas</p>
 - Eduardo Leite (gei12068@fe.up.pt)
-	Percentagem de contribuição: 25%
-	Número aproximado de horas de trabalho: 7 horas
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 7 horas</p>
 - Francisco Queirós (up201404326@fe.up.pt)
-	Percentagem de contribuição: 25%
-	Número aproximado de horas de trabalho: 7 horas
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 7 horas</p>
 - Gonçalo Leão (up201406036@fe.up.pt)
-	Percentagem de contribuição: 25%
-	Número aproximado de horas de trabalho: 7 horas
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 7 horas</p>
 	
 Faculdade de Engenharia da Universidade do Porto - MIEIC
 
