@@ -16,7 +16,8 @@ Este pode ser jogado tanto em modo *singleplayer* como em *multiplayer* e __supo
 
 <p align="center">
 	<img src="resources/feature.png" alt="Transformação de uma região usando comandos do WorldEdit para que pareça mais natural." />
-	<em><br>Figura 2 - Transformação de uma região usando comandos do WorldEdit para que pareça mais "natural" (à esquerda - antes; à direita - depois)</em>
+	<em><br>Figura 2 - Transformação de uma região usando comandos do WorldEdit para que pareça mais "natural" (à esquerda - antes; à direita - depois) 
+	<br>(Fonte: Wiki oficial do WorldEdit)</em>
 </p>
 
 Das funcionalidades de edição do mundo, podem-se destacar:
