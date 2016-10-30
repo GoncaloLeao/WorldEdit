@@ -296,3 +296,12 @@ Vamos agora definir algumas __*template*s do diagrama de casos de uso__, para os
 - __Excepções__:
  * Se utilizador escrever mal o comando - *chat* vai mostrar uma mensagem de erro, que diz ao utilizador que esse comando não existe
  * Se utilizador colocar tudo corretamente mas não tiver permissão para executar o comando escolhido nas condições atuais - *chat* vai mostrar uma mensagem de erro que informa o utilizador que não tem permissão para executar o comando escolhido
+ 
+### Modelo de Domínio
+
+Um modelo do domínio tem como objetivo __representar classes conceituais da aplicação num contexto mais real__, de alto nível. Este modelo __não pretende especificar as classes envolvidas no *design* do software mas sim os procedimentos, eventos, objetos e relações no domínio dos problemas__ que a aplicação pretende resolver.   
+
+<p align="center">
+	<img src="resources/R2/img6.png" alt="Domain Model do World Edit" />
+	<em><br>Figura 6: Domain Model do World Edit.</em>
+</p>
