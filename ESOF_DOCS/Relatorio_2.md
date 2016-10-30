@@ -37,7 +37,7 @@ Dado que este projeto tem um __processo de *software* próximo do modelo increme
 Na figura abaixo, pode-se ver um exemplo da proposta de uma nova *feature* (requisito funcional) através do fórum do WorldEdit. A nova feature consiste em criar semi-esferas de certos tipos de blocos, tendo em conta que já existe uma funcionalidade semelhante para desenhar esferas. 
 
 <p align="center">
-	<img src="resources/R2/img1.png" alt="Exemplo da proposta de uma “feature” através do fórum do WorldEdit." />
+	<img src="resources/R2/ex_levantamento.png" alt="Exemplo da proposta de uma “feature” através do fórum do WorldEdit." />
 	<em><br>Figura 2: Exemplo da proposta de uma “feature” através do fórum do WorldEdit (Fonte: http://forum.enginehub.org/threads/half-a-sphere-a-dome.168/#post-653).</em>
 </p>
 
@@ -48,7 +48,7 @@ A __análise e negociação de requisitos ocorre nos mesmos canais de comunicaç
 A título de exemplo, vejamos o início da discussão no fórum do WorldEdit para a proposta da feature apresentada anteriormente, para desenhar semi-esferas.
 
 <p align="center">
-	<img src="resources/R2/img2.png" alt="Análise e negociação da “feature”proposta pelo fórum do WorldEdit." />
+	<img src="resources/R2/ex_analise.png" alt="Análise e negociação da “feature”proposta pelo fórum do WorldEdit." />
 	<em><br>Figura 3: Análise e negociação da “feature” proposta pelo fórum do WorldEdit.</em>
 </p>
 
@@ -178,7 +178,7 @@ Alguns dos comandos existentes e respectiva resposta do WorldEdit após serem in
 Um requisito não-funcional é uma __restrição nos serviços e funcionalidades da aplicação__. Tratam-se de requisitos que __tendem a abranger todo o sistema e não apenas alguns dos seus componentes específicos__. As restrições podem estar associadas a questões de eficiência, segurança, fiabilidade, portabilidade ou facilidade de uso do sistema, entre outras. 
 
 <p align="center">
-	<img src="resources/R2/img4.png" alt="Classificação dos requisitos não-funcionais" />
+	<img src="resources/R2/non-func_reqs.png" alt="Classificação dos requisitos não-funcionais" />
 	<em><br>Figura 4: Classificação dos requisitos não-funcionais (Fonte: Software Engineering, Ian Sommerville, 9th Edition).</em>
 </p>
 
@@ -222,7 +222,7 @@ Não existem quaisquer requisitos de espaço.
 Um diagrama de casos de uso tem como objetivo __esquematizar, de forma simples e clara, os diferentes cenários de utilização da aplicação por parte dos utilizadores finais__. O diagrama identifica os __atores (utilizadores) e as suas interações com o sistema__.
 
 <p align="center">
-	<img src="resources/R2/img5.png" alt="Use Case Diagram do World Edit" />
+	<img src="resources/R2/Use Case Diagram.png" alt="Use Case Diagram do World Edit" />
 	<em><br>Figura 5: Use Case Diagram do World Edit.</em>
 </p>
 
@@ -302,7 +302,7 @@ Vamos agora definir algumas __*template*s do diagrama de casos de uso__, para os
 Um modelo do domínio tem como objetivo __representar classes conceituais da aplicação num contexto mais real__, de alto nível. Este modelo __não pretende especificar as classes envolvidas no *design* do software mas sim os procedimentos, eventos, objetos e relações no domínio dos problemas__ que a aplicação pretende resolver.   
 
 <p align="center">
-	<img src="resources/R2/img6.png" alt="Domain Model do World Edit" />
+	<img src="resources/R2/Domain model.png" alt="Domain Model do World Edit" />
 	<em><br>Figura 6: Domain Model do World Edit.</em>
 </p>
 
