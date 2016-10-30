@@ -128,3 +128,76 @@ Alguns dos comandos existentes e respectiva resposta do WorldEdit após serem in
  * /butcher - WorldEdit deve eliminar todos os inimigos (mobs) dentro da zona selecionada
  * /now - WorldEdit deve simular queda de neve dentro da zona selecionada
  * /ex - WorldEdit deve eliminar fogos dentro da zona selecionada
+
+* Comandos para manipulação de “*chunks*” (*chunks* são segmentos 16x16x256 do mundo de Minecraft. Estes comandos ajudam à sua listagem e edição):
+ * /chunkinfo - WorldEdit deve devolver o nome do ficheiro onde está o *chunk* onde o jogador está
+ * /listchunks - *plugin* deve listar todos os *chunks* a serem usados
+ * /delchunks - *plugin* deve apagar os *chunks* dentro da região selecionada
+ 
+* Comandos para seleção de ferramentas (o WorldEdit fornece ferramentas que podem ser associadas a um item para poderem ser utilizadas e que ajudam na edição da região selecionada pelo utilizador):
+ * // - *plugin* deve mudar a arma do jogador para “*super pick axe*” que permite minar e destruir blocos mais facilmente
+ * /sp single - *plugin* deve mudar a “*super pick axe*” para atuar em apenas um bloco de cada vez
+ * /sp area - *plugin* deve mudar a “*super pick axe*” para atuar numa área de blocos
+ * /tool - WorldEdit deve selecionar a ferramenta descrita no comando introduzido pelo utilizador
+ * /none - *plugin* deve retirar a ferramenta a ser utilizada pelo utilizador
+
+* Comandos para seleção de pincéis (o *plugin* permite construir e editar regiões de blocos a grandes distâncias a partir da utilização de pincéis que podem ser ligados ao item a ser utilizado de momento):
+ * /brush sphere - *plugin* deve selecionar o pincel de gerar esferas
+ * /brush cylinder - *plugin* deve selecionar o pincel de gerar cilindros
+ * /brush clipboard - *plugin* deve mudar a ferramenta atual para a ferramenta de *clipboard*
+ * /brush smooth - *plugin* deve selecionar o pincel que nivela regiões de blocos
+
+* Comandos de *Getting Around* (o *plugin* fornece comandos que ajudam o utilizador a mexer a sua personagem de forma a conseguir editar as regiões de blocos de forma mais eficiente):
+ * unstuck - *plugin* deve teleportar jogador para o primeiro espaço livre perto da posição onde chama o comando
+ * /ascend - *plugin* deve teleportar jogador para um nível de blocos acima
+ * /descend - *plugin* deve teleportar jogador para um nível de blocos abaixo
+ * /thru - *plugin* deve teleportar jogador para o outro lado da parede para onde está a olhar 
+
+* Comandos para *snapshots* (funcionalidade que permite carregar uma secção do mundo definida por uma selecção de uma região e fazer *restore* para um *backup* feito anteriormente sem ter de desligar o servidor):
+ * //restore - *plugin* deve restaurar um *snapshot* especificado pelo utilizador ao chamar o comando
+ * //snapshot use - *plugin* deve usar  um *snapshot* especificado pelo utilizador ao chamar o comando
+ * //snapshot sel - *plugin* deve selecionar um *snapshot* com um id especificado pelo utilizador ao chamar o comando
+
+* Comandos para *scripting* (o WorldEdit permite integrar *scripts* para permitir fazer pequenas tarefas de forma rápida e sem complicações):
+ * /cs - WorldEdit deve executar o *script* especificado ao chamar o comando
+ * /.s - WorldEdit deve re-executar o último *script* executado mas com novos argumentos
+ 
+* Comandos Gerais:
+ * /searchitem - WorldEdit deve procurar por um item com o nome especificado na chamada do comando
+ * /worldedit - *plugin* deve listar todos os comandos disponibilizados pelo *plugin*
+ * /worldedit help - *plugin* deve mostrar documentação sobre o comando cujo nome é especificado na chamada deste comando ou lista documentação sobre todos os comandos caso não sejam declarados argumentos
+ 
+* Comandos para biomas (um bioma é um região do mundo do Minecraft com características geográficas específicas (clima, humidade, altitude…)):
+ * /biomelist - *plugin* deve listar todos os biomas disponibilizados pelo *plugin*
+ * /biomeinfo - *plugin* deve mostrar qual o bioma no bloco selecionado
+ * //setbiome - *plugin* deve colocar bioma especificado nos blocos da região selecionada 
+
+
+#### Requisitos não funcionais
+
+Um requisito não-funcional é uma __restrição nos serviços e funcionalidades da aplicação__. Tratam-se de requisitos que __tendem a abranger todo o sistema e não apenas alguns dos seus componentes específicos__. As restrições podem estar associadas a questões de eficiência, segurança, fiabilidade, portabilidade ou facilidade de uso do sistema, entre outras. 
+
+<p align="center">
+	<img src="resources/R2/img4.png" alt="Classificação dos requisitos não-funcionais" />
+	<em><br>Figura 4: Classificação dos requisitos não-funcionais (Fonte: Software Engineering, Ian Sommerville, 9th Edition).</em>
+</p>
+
+
+##### Desenvolvimento
+
+No WorldEdit, as __funcionalidades a adicionar no projeto têm de satisfazer alguns requisitos gerais__. __Não devem interferir com a API, nem devem alterar a forma como os utilizadores usam o *plugin*__, a menos que haja uma boa razão para isso. Devem__ evitar implementar funcionalidades que vão ser difíceis de manter__ mais tarde. Também devem procurar ser __independentes das outras funcionalidades__ implementadas.
+
+
+##### Segurança
+
+Quanto aos requisitos de segurança, estes têm de ser __cumpridos de forma imperativa, pois algumas funções do *software* poderiam sofrer abuso por parte de alguns utilizadores se não lhes fossem impostas restrições__ por parte dos desenvolvedores do *software*. Isto deve-se pelo facto de certas funções, sem restrições de utilização, deterem bastante poder em relação a todo o *software*. A título de exemplo, um utilizador pode fazer *paste* de uma área muito grande, o que pode conduzir a um *crash* do *server*. É por isso importante restringir o acesso de certas ferramentas apenas a pessoas que o devem ter, por exemplo, os desenvolvedores do projeto.
+
+
+##### Portabilidade
+
+O __código deste projeto é escrito maioritariamente em Java e evita o uso de código específico de certas plataformas__ sempre que possível, usando ainda mecanismos de recurso caso algo não funcione. Desta forma, o *plugin* funciona em todas as grandes plataformas.
+
+
+##### Compatibilidade
+
+Em termos de compatibilidade, o __WorldEdit é um dos poucos *plugins* na comunidade de Minecraft que funciona em várias plataformas de *plugins* de forma consistente__. Alguns exemplos são hMod, SCP Bukkit, Spigot, Forge, Canary, Spout, entre outros.
