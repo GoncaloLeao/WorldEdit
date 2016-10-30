@@ -305,3 +305,8 @@ Um modelo do domínio tem como objetivo __representar classes conceituais da apl
 	<img src="resources/R2/img6.png" alt="Domain Model do World Edit" />
 	<em><br>Figura 6: Domain Model do World Edit.</em>
 </p>
+
+### Conclusões
+ 
+É do entender dos autores deste relatório que a __fase de engenharia de requisitos tem uma importância fulcral no desenvolvimento de *software*__. Com efeito, __seguir um bom processo de engenharia de requisitos permite detetar vários erros__ que, se não fossem tratados numa fase mais inicial, seriam muito mais custosos (nomeadamente em termos de esforço e tempo, neste caso) de resolver mais à frente. Estes erros consistem sobretudo em __falhas de comunicação entre os *stakeholders* e numa má compreensão dos requisitos a incorporar no sistema__. Assim, o processo de engenharia de requisitos mostra bem a __importância do diálogo__ entre as diferentes partes envolvidas num projeto de engenharia de software.
+Apesar do processo de engenharia de requisitos do WorldEdit não seguir um modelo próximo do que é apresentado na figura 1, foi adotada uma boa metodologia para a gestão dos requisitos, visto que, em particular, lida bem com a __evolução contínua dos requisitos do sistema__.
