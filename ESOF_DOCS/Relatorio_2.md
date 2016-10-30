@@ -201,3 +201,98 @@ O __código deste projeto é escrito maioritariamente em Java e evita o uso de c
 ##### Compatibilidade
 
 Em termos de compatibilidade, o __WorldEdit é um dos poucos *plugins* na comunidade de Minecraft que funciona em várias plataformas de *plugins* de forma consistente__. Alguns exemplos são hMod, SCP Bukkit, Spigot, Forge, Canary, Spout, entre outros.
+
+##### Dependências
+
+O WorldEdit __depende de algumas bibliotecas de Java como o Google Guava__ (que contém, em particular, novas estruturas de dados como *multimap* e *multiset*), entre outras. No entanto, __não tem quaisquer dependências com outros *plugins* ou *mods*__ de Minecraft. 
+
+
+##### Usabilidade 
+
+__Não são necessárias habilidades para trabalhar com este *plugin*__. Apenas é necessário ler a documentação.
+
+
+##### Espaço
+
+Não existem quaisquer requisitos de espaço.
+
+
+### Casos de Uso
+
+Um diagrama de casos de uso tem como objetivo __esquematizar, de forma simples e clara, os diferentes cenários de utilização da aplicação por parte dos utilizadores finais__. O diagrama identifica os __atores (utilizadores) e as suas interações com o sistema__.
+
+<p align="center">
+	<img src="resources/R2/img5.png" alt="Use Case Diagram do World Edit" />
+	<em><br>Figura 5: Use Case Diagram do World Edit.</em>
+</p>
+
+Após uma análise do contexto do World Edit, chegamos à conclusão de que podemos distinguir __2 actores__ para o nosso diagrama:
+__*User*__ - O __utilizador__, que __através da linha de comandos fornecida pelo Minecraft, pode executar comandos para o *plugin*__. Sendo assim, __ligamos este actor a *use cases* que representam grupos de comandos__. Não descemos mais um nível até aos comandos em si, para não complicar demasiado o gráfico, pois tal não seria interessante no contexto deste relatório.
+__*Owner*__ - O __dono do servidor__, que é um tipo específico de utilizador, __consegue fazer tudo o que o utilizador pode fazer e pode também gerir as permissões e grupos a que os jogadores pertencem__, apesar de estas ações funcionarem em conjunto com *plugins* externos que auxiliam à gestão de permissões, as permissões pertencem e correspondem aos comandos do World Edit e portanto achamos pertinente incluir estas acções como casos de uso.
+
+Vamos agora definir algumas __*template*s do diagrama de casos de uso__, para os casos mais importantes:
+
+- __Nome__ - “Uses Selection Commands”
+- __Actores__ - User
+- __*Goal description*__ - utilizador usa um comando que seleciona uma região de blocos, ou modifica uma seleção pré-existente
+- __Referência a requisitos__ - comandos para a seleção de regiões
+- __Pré-condições__ - utilizador deve ter feito *login* no seu servidor de Minecraft e deve ter a permissão para este comando
+- __Descrição__: 
+ * Utilizador seleciona o *chat* de Minecraft clicando na tecla “T”
+ * Utilizador escreve o comando desejado, com os argumentos necessários no *chat* e clica na tecla “Enter”
+ * Utilizador seleciona a região do mundo que quer editar e procede à edição desse conjunto de blocos
+- __Pós-condições__ - A selecção que o utilizador tinha feito, foi alterada de acordo com o comando selecionado dentro do grupo de comandos que este *use case* representa
+- __Variações__: 
+ * Se utilizador cancelar a escrita do comando - este não vai ser registado pelo chat e plugin não vai executar nada até que um comando seja recebido com sucesso
+- __Excepções__:
+ * Se utilizador escrever mal o comando - chat vai mostrar uma mensagem de erro, que diz ao utilizador que esse comando não existe
+ * Se utilizador colocar argumentos inválidos, ou nenhum argumento - chat vai mostrar uma mensagem de erro que informa o utilizador da utilização correta desse comando ou remete-o para o comando “help”
+ * Se utilizador colocar tudo corretamente mas não tiver permissão para executar o comando escolhido nas condições atuais - *chat* vai mostrar uma mensagem de erro que informa o utilizador que não tem permissão para executar o comando escolhido
+ 
+- __Nome__ - “Performs Region Operations”
+- __Actores__ - User
+- __*Goal description*__ - utilizador usa um comando que altera uma região de blocos previamente selecionada
+- __Referência a requisitos__ - comandos para a manipulação de regiões
+- __Pré-condições__ - utilizador deve ter feito *login* no seu servidor de Minecraft e deve ter a permissão para este comando. Para além disto, o utilizador deve ainda ter feito os passos necessários à seleção de uma região de blocos de forma bem sucedida.
+- __Descrição__: 
+ * Utilizador seleciona o *chat* de Minecraft clicando na tecla “T”
+ * Utilizador escreve o comando desejado, com os argumentos necessários no *chat* e clica na tecla “Enter”
+ * Utilizador manipula a região do mundo que selecionou previamente, utilizando os comandos de seleção de regiões
+- __Pós-condições__ - A região editada pelo utilizador apresenta agora as características que este definiu através do comando selecionado  dentro do grupo de comandos que este *use case* representa.
+- __Variações__: 
+ * Se utilizador cancelar a escrita do comando - este não vai ser registado pelo *chat* e *plugin* não vai executar nada até que um comando seja recebido com sucesso
+- __Excepções__:
+ * Se utilizador escrever mal o comando - *chat* vai mostrar uma mensagem de erro, que diz ao utilizador que esse comando não existe
+ * Se utilizador colocar argumentos inválidos, ou nenhum argumento - *chat* vai mostrar uma mensagem de erro que informa o utilizador da utilização correta desse comando ou remete-o para o comando “help”
+ * Se utilizador colocar tudo corretamente mas não tiver permissão para executar o comando escolhido nas condições atuais - *chat* vai mostrar uma mensagem de erro que informa o utilizador que não tem permissão para executar o comando escolhido
+ 
+- __Nome__ - “Uses Generation Commands”
+- __Actores__ - User
+- __*Goal description*__ - utilizador usa um comando que gera automaticamente uma região de blocos de acordo com o comando selecionado e os argumentos inseridos
+- __Referência a requisitos__ - comandos para a geração de regiões
+- __Pré-condições__ - utilizador deve ter feito *login* no seu servidor de Minecraft e deve ter a permissão para este comando. 
+- __Descrição__: 
+ * Utilizador seleciona o *chat* de Minecraft clicando na tecla “T”
+ * Utilizador escreve o comando desejado, com os argumentos necessários no *chat* e clica na tecla “Enter”
+- __Pós-condições__ - o comando gerou uma região de blocos com as dimensões passadas nos argumentos e com a forma respetiva descrita pelo comando introduzido. Esta região de blocos vai ser gerada no bloco abaixo do jogador.
+- __Variações__: 
+ * Se utilizador cancelar a escrita do comando - este não vai ser registado pelo *chat* e *plugin* não vai executar nada até que um comando seja recebido com sucesso
+- __Excepções__:
+ * Se utilizador escrever mal o comando - *chat* vai mostrar uma mensagem de erro, que diz ao utilizador que esse comando não existe
+ * Se utilizador colocar argumentos inválidos, ou nenhum argumento - *chat* vai mostrar uma mensagem de erro que informa o utilizador da utilização correta desse comando ou remete-o para o comando “help”
+ * Se utilizador colocar tudo corretamente mas não tiver permissão para executar o comando escolhido nas condições atuais - *chat* vai mostrar uma mensagem de erro que informa o utilizador que não tem permissão para executar o comando escolhido
+ 
+- __Nome__ - “Uses History Commands”
+- __Actores__ - User
+- __*Goal description*__ - utilizador usa um comando que manipula o histórico de operações feitas previamente. Estas operações são originadas por outros comandos inseridos pelo utilizador que manipulam regiões de blocos
+- __Referência a requisitos__ - comandos para manipulação do histórico de ações
+- __Pré-condições__ - utilizador deve ter feito *login* no seu servidor de Minecraft e deve ter a permissão para este comando 
+- __Descrição__: 
+ * Utilizador seleciona o *chat* de Minecraft clicando na tecla “T”
+ * Utilizador escreve o comando desejado e clica na tecla “Enter”
+- __Pós-condições__ - O comando refez a operação apagada anteriormente ou apagou a última operação feita, conforme o comando inserido e de acordo com o estado do mundo quando o comando é inserido
+- __Variações__: 
+ * Se utilizador cancelar a escrita do comando - este não vai ser registado pelo *chat* e *plugin* não vai executar nada até que um comando seja recebido com sucesso
+- __Excepções__:
+ * Se utilizador escrever mal o comando - *chat* vai mostrar uma mensagem de erro, que diz ao utilizador que esse comando não existe
+ * Se utilizador colocar tudo corretamente mas não tiver permissão para executar o comando escolhido nas condições atuais - *chat* vai mostrar uma mensagem de erro que informa o utilizador que não tem permissão para executar o comando escolhido
