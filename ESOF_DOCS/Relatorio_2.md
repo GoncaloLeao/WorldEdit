@@ -53,3 +53,78 @@ A título de exemplo, vejamos o início da discussão no fórum do WorldEdit par
 </p>
 
 No exemplo acima, o utilizador “Reiver” propõe uma solução alternativa para o problema apresentado inicialmente. Em seguida, o utilizador "NOiR" expressa a sua opinião, dizendo que apesar de ser uma solução alternativa viável em alguns casos, noutros não o será (quando não houver espaço suficiente para desenhar uma esfera).  Por fim, o utilizador “wizjany”, um dos principais developers do projeto, informa que já existe uma proposta igual no redmine, ilustrando a __importância que esta fase tem para eliminar colisões entre propostas__.
+
+#### Especificação
+
+No caso do WorldEdit, __não existe a fase de especificação de requisitos__. Tratando-se de um projeto *open-source* de pequena/média dimensão em que __não há uma organização muito rígida__, não é elaborado um documento que formalize os novos requisitos do *software*. 
+
+O que __existe de mais próximo a este gênero de documentos é a *wiki* do WorldEdit__, onde são __apresentadas as features deste *plugin*__. Assim, a *wiki* funciona como um manual de utilização do *plugin*. Contudo, a *wiki* __só é atualizada depois das features serem implementadas__, o que é uma diferença fundamental com os modelos estudados de engenharia de *software* e de requisitos, onde os documentos a formalizar os requisitos são elaborados antes da sua implementação.
+
+
+#### Validação
+
+A fase de validação também __não é facilmente identificável__ no caso do WorldEdit,  visto que __não existe nenhum método para formalizar os requisitos__.
+Podemos apenas dizer que, no contexto do WorldEdit, a fase de validação de requisitos __ocorre de forma natural e informal__ ao longo das outras fases do processo de engenharia de *software*.
+
+
+
+### Identificação dos requisitos
+
+Os requisitos de *software* podem ser separados em duas categorias: __requisitos funcionais e não-funcionais__.
+Vamos agora ver como se podem definir estes dois tipos de requisitos e ver alguns exemplos para o caso do projeto WorldEdit.
+
+
+#### Requisitos funcionais
+
+Um requisito funcional é uma __declaração de serviços que a aplicação deve fornecer e de como deve reagir face a um dado *input* ou situação__.
+No caso do WorldEdit, os __*inputs* dados pelo utilizador do *plugin* são feitos através de comandos__, com ou sem argumentos dependendo na utilização destes. Estes comandos são __introduzidos na janela de chat do jogo Minecraft e permitem alterar o mundo 3D a partir da manipulação dos blocos já existentes ou da geração de novos blocos__.
+Alguns dos comandos existentes e respectiva resposta do WorldEdit após serem inseridos na consola são:
+
+ * //limit - o *plugin* deve limitar o número máximo de blocos que o utilizador seleciona ao mesmo tempo.
+
+* Comandos para manipulação do histórico de ações (todas as operações são guardadas num histórico de ações, que guarda as 15 operações mais requisitos. Este histórico muda sempre que é alterado um bloco através do WorldEdit):
+ * //undo - programa deve desfazer a última ação feita;
+ * //redo - programa deve refazer a última ação desfeita;
+ * /clearhistory - programa deve apagar o histórico de ações.
+ 
+* Comandos para a seleção de regiões (o WorldEdit é baseado na edição de regiões de blocos que são previamente selecionadas utilizando estes comandos):
+ * //wand - *plugin* dá a ferramenta de seleção de regiões ao utilizador para que os comandos relativos a essa operação possam ser utilizados. Para o *plugin* cancelar essa ação, deverá ser inserido o comando /toggleeditwand pelo utilizador.
+ * //sel - programa deve escolher a forma da região a editar
+ * //desel - deve cancelar seleção efetuada
+ * //chunk - programa deve selecionar “*chunk*” (grupo de blocos com dimensões predefinidas pelo Minecraft) no local onde o jogador se encontra
+ * //expand e //contract - programa deve expandir ou contrair a região selecionada conforme os argumentos que lhe sejam passados no comando
+ * //shift - *plugin* deve mover a região selecionada para outro local escolhido pelo utilizador
+
+* Comandos para manipulação de regiões (o WorldEdit tem comandos simples e intuitivos para os utilizadores que ajudam na manipulação de regiões de blocos previamente selecionadas por comandos deste mesmo *plugin*):
+ * //set - WorldEdit deve transformar todos os blocos da região selecionada no tipo especificado pelo comando 
+ * //replace - *plugin* deve substituir todos os blocos da região de um determinado tipo por blocos de outro tipo (ambos especificados pelo comando)
+ * //walls - *plugin* deve construir paredes à volta da região selecionada
+ * //outline - *plugin* deve construir paredes, teto e chão à volta da região selecionada
+ * //smooth - *plugin* deve nivelar a superfície da região selecionada 
+ * //deform - *plugin* deforma a superfície da região selecionada segundo uma função especificada na chamada do comando
+ * //forest - *plugin* deve preencher a região selecionada com uma floresta
+
+* Comandos para *clipboard* (funcionalidade implementada no *plugin* que permite copiar/colar uma região de blocos, guardá-la ou até carregá-la a partir de um ficheiro):
+ * //copy - *plugin* deve copiar a região selecionada 
+ * //cut - *plugin* deve cortar a região selecionada
+ * //paste - *plugin* deve colar a região selecionada
+ * //rotate e //flip - *plugin* deve rodar/virar a região em clipboard
+ * //schem - *plugin* deve fazer a operação especificada no comando em relação ao *clipboard* existente no momento (guardar em ficheiro, fazer load de um *clipboard* guardado, etc)
+
+* Comandos para geração de regiões (o WorldEdit permite gerar regiões com formas mais complexas que os quadrados tradicionais do Minecraft a partir de comandos simples, usando como bloco original o bloco abaixo da posição do jogador):
+ * //generate - WorldEdit deve gerar uma região de acordo com a fórmula indicada pelo utilizador na chamada do comando
+ * //cyl - *plugin* deve gerar um cilindro
+ * //sphere - *plugin* deve gerar uma esfera 
+ * //pyramid - *plugin* deve gerar uma pirâmide
+ * /forestgen - *plugin* deve gerar uma floresta
+
+* Comandos utilitários (o *plugin* disponibiliza comandos que facilitam a manipulação do mundo 3D):
+ * //fill - WorldEdit deve colocar blocos na zona vazia dentro da região selecionada
+ * //drain - *plugin* deve retirar líquidos (água ou lava) de dentro da região selecionada
+ * /fixwater - *plugin* deve nivelar zonas com água dentro da região selecionada
+ * /fixlava - *plugin* deve nivelar zonas com lava dentro da região selecionada
+ * /removeabove - *plugin* deve retirar blocos que estejam acima da posição do jogador
+ * /removebellow - *plugin* deve retirar blocos que estejam abaixo da posição do jogador
+ * /butcher - WorldEdit deve eliminar todos os inimigos (mobs) dentro da zona selecionada
+ * /now - WorldEdit deve simular queda de neve dentro da zona selecionada
+ * /ex - WorldEdit deve eliminar fogos dentro da zona selecionada
