@@ -45,7 +45,7 @@ A vista lógica apresenta as __abstrações mais importantes do sistema sob a fo
 No diagrama abaixo, pode-se ver o diagrama UML dos principais packages do projeto. As setas representam as dependências entre módulos.
 
 <p align="center">
-	<img src="resources/R2/packages.png" alt="Diagrama UML de “packages” dos principais pacotes do WorldEdit." />
+	<img src="resources/R3/main packages.png" alt="Diagrama UML de “packages” dos principais pacotes do WorldEdit." />
 	<em><br>Figura 1: Diagrama UML de “packages” dos principais pacotes do WorldEdit.</em>
 </p>
 
@@ -58,7 +58,7 @@ Na figura abaixo, são representados os __pacotes do núcleo lógico do WorldEdi
 maior parte do processamento do plugin.
 
 <p align="center">
-	<img src="resources/R2/corePackages.png" alt="Diagrama UML dos principais “packages” em worldedit-core." />
+	<img src="resources/R3/Logical View.png" alt="Diagrama UML dos principais “packages” em worldedit-core." />
 	<em><br>Figura 2: Diagrama UML dos principais “packages” em worldedit-core.</em>
 </p>
 Vamos agora descrever a responsabilidade de cada módulo:
