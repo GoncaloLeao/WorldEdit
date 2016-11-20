@@ -238,14 +238,12 @@ não-funcionais) que foram identificados no segundo relatório.
 
 ### Bibliografia
 - Slides das aulas teóricas
-- Software Engineering, Ian Sommerville, 9th Edition, capítulos 4, 5 e glossário.
+- Software Engineering, Ian Sommerville, 9th Edition, capítulo 6.
 - <a href="http://www.mit.jyu.fi/ope/kurssit/TIES462/Materiaalit/IEEE_SoftwareEngGlossary.pdf">Glossário do IEEE para a terminologia de engenharia de software</a>
-- <a href="https://github.com/sk89q/WorldEdit/tree/master/worldedit-core/src/main/java/com/sk89q/worldedit"></a>
-- <a href="http://docs.sk89q.com/worldedit/apidocs/overview-summary.html"></a>
-- <a href="http://services.minecraftedu.com/wiki/What_is_MinecraftEdu">Website oficial do MinecraftEdu</a>
+- <a href="https://github.com/sk89q/WorldEdit">Repositório oficial</a>
 - <a href="https://www.spigotmc.org/wiki/about-spigot/">Página about da wiki oficial do Spigot</a>
-- <a href="http://www.enginehub.org/worldedit/faq#explain-modding"></a>
-
+- <a href="http://www.enginehub.org/worldedit/faq#explain-modding">FAQ oficial do WorldEdit</a>
+- <a href="http://services.minecraftedu.com/wiki/What_is_MinecraftEdu">Website oficial do MinecraftEdu</a>
 
 ### Infomações
 
