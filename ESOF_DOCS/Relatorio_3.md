@@ -54,7 +54,7 @@ independente da plataforma (Bukkit, Forge, …) utilizada para estender o Minecr
 Os pacotes “worldedit-sponge”, “worldedit-bukkit” e “worldedit-forge” contém as __classes necessárias para adaptar as 
 funcionalidades-base do WorldEdit à plataforma Sponge, Bukkit e Forge__, respetivamente. Assim, são __módulos dependentes da plataforma__.
 
-Na figura abaixo, são representados os __pacotes do núcleo lógico do WorldEdit__, contidos no diretório <a href="https://github.com/sk89q/WorldEdit/tree/master/worldedit-core/src/main/java/com/sk89q/worldedit">WorldEdit/worldedit-core/src/main/java/com/sk89q/worldedit/</a>, dentro do pacote worldedit-core, onde ocorre a 
+Na figura abaixo, são representados os __principais pacotes do núcleo lógico do WorldEdit__, contidos no diretório <a href="https://github.com/sk89q/WorldEdit/tree/master/worldedit-core/src/main/java/com/sk89q/worldedit">WorldEdit/worldedit-core/src/main/java/com/sk89q/worldedit/</a>, dentro do pacote worldedit-core, onde ocorre a 
 maior parte do processamento do plugin.
 
 <p align="center">
