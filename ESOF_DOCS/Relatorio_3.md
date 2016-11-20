@@ -181,3 +181,90 @@ Vamos agora analisar alguns dos padrões arquiteturais mais conhecidos e ver se 
 Convém relembrar que, num contexto prático, mesmo se forem seguidos os princípios gerais de um determinado padrão, o
 mapeamento entre o padrão e a arquitetura de um programa em concreto nem sempre é perfeito, podendo haver algumas diferenças
 ao nível do *design* da arquitetura.
+
+#### Model-View-Controller
+
+O padrão arquitetural Model-View-Controller separa o sistema em três principais componentes. 
+A componente Model encapsula todo o estado interno do programa e notifica o View de mudanças deste seu estado. 
+A componente View é responsável por apresentar ao utilizador a informação contida em Model (através de um *command line
+interface* ou *graphical user interface*, por exemplo). É também responsável por interrogar a componente Model para averiguar 
+se este atualizou o seu estado e de enviar eventos gerados pelo utilizador à componente Controller.
+
+A componente Controller mapeia as ações do utilizador em atualizações do estado interno do Model. Além disso, é responsável por
+selecionar a vista a ser usado no interface com o utilizador.
+No caso do WorldEdit, a __arquitetura MVC não está presente no WolrdEdit em si__. Contudo, é possível identificar uma __arquitetura
+próxima deste modelo se tivermos em conta os componentes externos fornecidos pela plataforma__ usada (Bukkit, Sponge…). Vamos usar
+o diagrama UML de componentes apresentado anteriormente (figura 3) para mapear (de forma aproximada) os três principais blocos
+do padrão MVC.
+
+Em primeiro lugar, a componente Model é constituída por MinecraftWorld, History, ScriptManager, SchematicManager e Clipboard.
+Estes componentes têm a responsabilidade de __armanzenar informações acerca do mundo de jogo, do histórico das ações do utilizador__, 
+dos ficheiros do tipo *craftscript* e *schematic* e do *clipboard*.
+
+Em segundo lugar, a componente View é representado pelos componentes externos MinecraftWorld e MinecraftCLI, que têm como 
+responsabilidades respetivas __apresentar o mundo do jogo (estado interno) ao jogador e ler os seus comandos através de uma
+interface por linha de comandos__.
+
+Por fim, a componente Controller é composta por EventHandler, Command e WorldEditor, que têm como objetivo __receber o 
+*input* do utilizador, interpretá-lo e atualizar a informação__ contida no componente Model. Trata-se da sequência de passos
+apresentados no diagrama de sequência da figura 5.
+
+
+#### Arquitetura em Camadas
+
+O padrão arquitetural da arquitetura em camadas define que o sistema esteja organizado num conjunto de camadas. 
+Cada camada tem o seu conjunto de funcionalidades e fornece serviços à camada acima.
+No caso do WorldEdit, é possível identificar a __estruturação do código em camadas observando o diagrama UML de pacotes__ da figura 1. 
+Os __módulos para cada variante de software de servidor acedem ao módulo “core” de forma a que o core se pareça como uma espécie 
+de serviço para o módulo do servidor__.
+Isto permite com que haja um __reuso de código__ porque o núcleo da lógica no módulo core é comum aos três casos de variantes de servidor.
+
+### Conclusões e Análise Crítica
+
+É do entender de todos os membros do grupo que __as vistas apresentadas permitem uma boa compreensão da arquitetura do WorldEdit__.
+A vista lógica, expressa usando diagramas de packages, apresenta os blocos lógicos do programa e as suas interdependências. 
+Enquanto que, a mais alto nível	, os __principais pacotes da aplicação estão bem organizados__ (figura 1), __a mais baixo nível, 
+existe uma forte interdependência entre blocos lógicos__ (figura 2), o que __dificultou bastante a análise__ da arquitetura do programa 
+ao nível do pacote worldedit-core.
+Com a vista de implementação, apresentada com um diagrama de componentes, foi possível identificar uma __boa modularização do código__.
+Com vista de *deployment*, foi possível apresentar a __distribuição dos artefactos pelos componentes de hardware__. A organização do 
+programa a este nível é, na opinião da equipa, apropriado.
+Para a vista de processo, escolheu-se de apresentar a __sequência de passos desde o input por parte dos jogadores até à atualização
+do mundo__, sendo estas as principais atividades da aplicação.
+Para concluir, apesar de ter havido algumas dificuldades iniciais na análise da arquitetura, após uma análise mais minuciosa do
+código e do repositório, a __organização do sistema do WorldEdit foi bem entendida e adequa-se bem aos requisitos__ (funcionais e 
+não-funcionais) que foram identificados no segundo relatório.
+
+
+### Bibliografia
+- Slides das aulas teóricas
+- Software Engineering, Ian Sommerville, 9th Edition, capítulos 4, 5 e glossário.
+- <a href="http://www.mit.jyu.fi/ope/kurssit/TIES462/Materiaalit/IEEE_SoftwareEngGlossary.pdf">Glossário do IEEE para a terminologia de engenharia de software</a>
+- <a href="https://github.com/sk89q/WorldEdit/tree/master/worldedit-core/src/main/java/com/sk89q/worldedit"></a>
+- <a href="http://docs.sk89q.com/worldedit/apidocs/overview-summary.html"></a>
+- <a href="http://services.minecraftedu.com/wiki/What_is_MinecraftEdu">Website oficial do MinecraftEdu</a>
+- <a href="https://www.spigotmc.org/wiki/about-spigot/">Página about da wiki oficial do Spigot</a>
+- <a href="http://www.enginehub.org/worldedit/faq#explain-modding"></a>
+
+
+### Infomações
+
+#### Autores
+- Andreia Rodrigues (up201404691@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 11 horas</p>
+- Eduardo Leite (gei12068@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 11 horas</p>
+- Francisco Queirós (up201404326@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 11 horas</p>
+- Gonçalo Leão (up201406036@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 11 horas</p>
+	
+Faculdade de Engenharia da Universidade do Porto - MIEIC
+
+3º ano, 1º semestre - Engenharia de Software
+
+2016-11-20
