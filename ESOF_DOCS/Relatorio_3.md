@@ -120,3 +120,64 @@ para que este possa manipular os objectos que carregou.
 O módulo __WorldEditor__ fornece ao componente EventHandler uma __interface que lhes possibilita fazer alterações ao mundo__. É o
 componente responsável por fazer a __ponte entre o mundo no Minecraft__ (representado pelo componente MinecraftWorld) e a sua
 representação no plugin.
+
+#### Vista de Deployment
+ 
+A vista de *deployment* apresenta o *hardware* do sistema e como os componentes de *software* estão distribuídos pelos seus
+processadores.
+ 
+A figura abaixo apresenta o diagrama UML de *deployment* para o caso do WorldEdit.
+ 
+<p align="center">
+    <img src="resources/R2/components.png" alt="Diagrama UML de “deployment” do programa." />
+    <em><br>Figura 4: Diagrama UML de “deployment” do programa.</em>
+</p>
+ 
+Os artefactos marcados a cinzento tratam-se de elementos externos ao próprio WorldEdit (não foram obtidos por compilação do seu código).
+ 
+Tal como fora apresentado no primeiro relatório, o__ WorldEdit é um *plugin* para Minecraft__. Por outras palavras, trata-se de uma
+__extensão do servidor que adiciona novas funcionalidades ao jogo ou modifica as já existentes__. Assim, do lado do servidor, é
+__necessário um *game server* que seja compatível com plugins__ (mais especificamente, com o WorldEdit) pois o server oficial do Minecraft
+não tem este tipo de suporte. Logo, __além do executável de Minecraft__, referido por Minecraft.jar no diagrama, __também é necessário__,
+do lado do servidor, __um executável de um *game server*__, MinecraftServerX.jar, e a respetiva versão do WorldEdit, WorldEditX.jar.
+ 
+Em termos de plataformas suportadas pelo WorldEdit, o __projeto suporta o Bukkit, o Forge e o Sponge__ (e, consequentemente,
+outras plataformas que derivam destas, como o Spigot). Além disso, o MinecraftEdu (uma plataforma para fins pedagógicos)
+vem com uma versão antiga *built-in* do WorldEdit.
+ 
+O WorldEdit suporta também, de forma não-oficial, as plataformas LiteLoader e Canary.
+ 
+Opcionalmente, podem ser fornecidos ficheiros do tipo .schematic ou .js, do lado do servidor, para que os utilizadores possam
+utilizar os respetivos *schematics* e *craftscripts* para editar o mundo.
+ 
+Ainda sobre o diagrama UML apresentado acima, convém referir que __a máquina do servidor pode também funcionar como uma
+das máquinas *client*__, passando a ser denominada de *host*.
+ 
+#### Vista de Processo
+ 
+A vista de processo __apresenta o sistema como um conjunto de processos que interagem entre si em tempo de execução__.
+Esta vista é útil para __averiguar se certos requisitos não-funcionais (como o desempenho e a disponibilidade) estão
+a ser implementados corretamente__.
+ 
+<p align="center">
+    <img src="resources/R2/components.png" alt="Diagrama UML de atividades do programa." />
+    <em><br>Figura 5: Diagrama UML de atividades do programa.</em>
+</p>
+ 
+A partir do diagrama UML de atividades da figura acima, podemos ver __qual é a interação entre o *input* do utilizador e o *plugin*__.
+O diagrama é simples pois reflecte a __falta de camadas extensas entre o utilizador e o WorldEdit__. Após o comando ser recebido
+(Command Reception), este é interpretado de forma sintática (Command Parsing) para determinar se é um comando existente, se
+está corretamente formatado, se os seus argumentos são válidos e se o utilizador tem permissão de executar esse comando. Se
+o comando for aceite, é invocado a função que lhe está associada e o “mundo” é alterado (World State Change).
+ 
+### Padrões Arquiteturais
+ 
+O objetivo de um padrão é __representar, partilhar e reutilizar conhecimento__.
+Um padrão arquitetural é uma descrição abstrata e estilizada de uma __boa prática de design arquitetural que já foi testada
+em diferentes ambientes e sistemas__. Assim, __um padrão descreve uma solução para um problema recorrente num certo contexto__,
+e à qual está associada um certo grau de credibilidade. Estes padrões são parecidos com os padrões de desenho com a diferença
+fundamental que os __padrões arquiteturais abrangem todo o sistema__ em vez de estarem relacionados com apenas alguns dos seus componentes.
+Vamos agora analisar alguns dos padrões arquiteturais mais conhecidos e ver se estes são usados no projeto WorldEdit.
+Convém relembrar que, num contexto prático, mesmo se forem seguidos os princípios gerais de um determinado padrão, o
+mapeamento entre o padrão e a arquitetura de um programa em concreto nem sempre é perfeito, podendo haver algumas diferenças
+ao nível do *design* da arquitetura.
