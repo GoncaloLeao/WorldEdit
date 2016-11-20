@@ -61,3 +61,62 @@ maior parte do processamento do plugin.
 	<img src="resources/R2/corePackages.png" alt="Diagrama UML dos principais “packages” em worldedit-core." />
 	<em><br>Figura 2: Diagrama UML dos principais “packages” em worldedit-core.</em>
 </p>
+Vamos agora descrever a responsabilidade de cada módulo:
+ 
+ * __Blocks__ - Módulo usado para representar os blocos no contexto do WorldEdit.
+ * __Command__ - Módulo usado para a interpretação e execução de comandos.
+ * __Entity__ - Módulo usado para representar entidades do jogo. Uma entidade é um objeto dinâmico no Minecraft,
+  por oposição a blocos (estáticos). Exemplos incluem: personagens, inimigos e *minecarts*.
+ * __Event__ - Módulo de classes usadas para representar os diferentes tipos de eventos do jogo (por exemplo, o clique com o botão esquerdo
+  ou direito do rato).
+ * __Extension__ - Módulo de ponto de entrada no package worldedit-core. As classes deste pacote são usadas por
+  worldedit-bukkit/forge/sponge para aceder à camada da lógica do WorldEdit.
+ * __Extent__ - Módulo utilizado para fazer a ponte entre o mundo e as entidades que ele contém.
+ * __Function__ - Módulo usado para aplicar funções sobre os vários elementos do mundo (blocos, personagens…). Estas funções correspondem
+  a comandos “parsed” pelo módulo *command*. Exemplos de funções incluem a troca blocos ou que conta blocos, etc.
+ * __History__ - Módulo utilizado para representar o histórico, útil para operações de *copy/paste*.
+ * __Internal__ - Módulo que guarda constantes, eventos e as estruturas de dados necessárias ao processamento do Console UI.
+ * __Math__ - Módulo usado pelos outros módulos para efectuar as operações matemáticas necessárias ao seu funcionamento.
+ * __Regions__ - Módulo utilizado para representar uma região do mundo no contexto do WorldEdit.
+ * __Schematic__ - Módulo utilizado para processar as *schematics*, uma funcionalidade do *plugin* que consiste em carregar uma região de
+  um ficheiro para o jogo.
+ * __Scripting__ - Módulo utilizado para a funcionalidade de scripting to *plugin*, que permite combinar funcionalidades de forma complexa
+  em *scripts*, que pode ser corridos no jogo utilizando comandos do *plugin*.
+ * __Session__ - Módulo utilizado para representar a sessão do utilizador, por sessão entende-se o período de tempo desde o momento do
+  *login* até ao momento do *logoff*.
+ * __Util__ - Módulo com classes utilitárias.
+ * __World__ - Módulo utilizado para representar o mundo no contexto do WorldEdit.
+ 
+#### Vista de Implementação
+ 
+A vista de implementação __mostra como é que o software pode ser decomposto em diferentes componentes que podem ser desenvolvidas em
+paralelo__ por um programador ou uma equipa de desenvolvimento.
+ 
+Na figura abaixo, apresenta-se o diagrama UML dos principais componentes do WorldEdit.
+<p align="center">
+    <img src="resources/R2/components.png" alt="Diagrama UML de “components” do WorldEdit." />
+    <em><br>Figura 3: Diagrama UML de “components” do WorldEdit.</em>
+</p>
+ 
+O componente __EventHandler__ é __responsável por todos os eventos gerados pelos utilizadores__, tais como cliques com o rato sobre objetos
+do mundo ou a escrita de um comando pela linha de comandos do jogo.
+ 
+O componente __Command__ é usado pelo EventHandler para fazer __parsing dos comandos escritos__ a partir da linha de comandos
+(representado pelo componente MinecraftCLI). Certos componentes fornecem ao EventHandler uma interface para que este possa comandos
+de um certo tipo.
+ 
+O componente __History__ permite o __processamento de comandos associados ao histórico__ da sessão.
+ 
+O componente __SchematicManager__ permite __processar comandos do tipo *schematic*__, que lidam com um formato de ficheiro específico para
+representar construções (como casas, castelos…) no Minecraft. O módulo SchematicManager fornece também ao Clipboard uma interface
+para que este possa carregar ficheiros.
+ 
+O módulo __ScriptManager__ permite ao EventHandler __executar *craftscripts*__, que se tratam de ficheiros que executam uma tarefa complexa
+de edição do mundo do Minecraft, como a geração aleatória de um labirinto.
+ 
+O componente __Clipboard__ permite __executar comandos associados ao clipboard da sessão__, o que possibilita a __manipulação de regiões__
+(como como *copy, paste* e *rotate*) com a forma de um paralelipípedo.  Este componente fornece também ao Schematic uma interface
+para que este possa manipular os objectos que carregou.
+O módulo __WorldEditor__ fornece ao componente EventHandler uma __interface que lhes possibilita fazer alterações ao mundo__. É o
+componente responsável por fazer a __ponte entre o mundo no Minecraft__ (representado pelo componente MinecraftWorld) e a sua
+representação no plugin.
