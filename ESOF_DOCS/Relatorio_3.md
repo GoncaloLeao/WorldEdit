@@ -94,7 +94,7 @@ paralelo__ por um programador ou uma equipa de desenvolvimento.
  
 Na figura abaixo, apresenta-se o diagrama UML dos principais componentes do WorldEdit.
 <p align="center">
-    <img src="resources/R2/components.png" alt="Diagrama UML de “components” do WorldEdit." />
+    <img src="resources/R3/Component Diagram.png" alt="Diagrama UML de “components” do WorldEdit." />
     <em><br>Figura 3: Diagrama UML de “components” do WorldEdit.</em>
 </p>
  
@@ -129,7 +129,7 @@ processadores.
 A figura abaixo apresenta o diagrama UML de *deployment* para o caso do WorldEdit.
  
 <p align="center">
-    <img src="resources/R2/components.png" alt="Diagrama UML de “deployment” do programa." />
+    <img src="resources/R3/Deployment Diagram.png" alt="Diagrama UML de “deployment” do programa." />
     <em><br>Figura 4: Diagrama UML de “deployment” do programa.</em>
 </p>
  
@@ -160,7 +160,7 @@ Esta vista é útil para __averiguar se certos requisitos não-funcionais (como 
 a ser implementados corretamente__.
  
 <p align="center">
-    <img src="resources/R2/components.png" alt="Diagrama UML de atividades do programa." />
+    <img src="resources/R3/Activity Diagram.png" alt="Diagrama UML de atividades do programa." />
     <em><br>Figura 5: Diagrama UML de atividades do programa.</em>
 </p>
  
