@@ -54,7 +54,7 @@ independente da plataforma (Bukkit, Forge, …) utilizada para estender o Minecr
 Os pacotes “worldedit-sponge”, “worldedit-bukkit” e “worldedit-forge” contém as __classes necessárias para adaptar as 
 funcionalidades-base do WorldEdit à plataforma Sponge, Bukkit e Forge__, respetivamente. Assim, são __módulos dependentes da plataforma__.
 
-Na figura abaixo, são representados os __pacotes do núcleo lógico do WorldEdit__, dentro do pacote worldedit-core, onde ocorre a 
+Na figura abaixo, são representados os __pacotes do núcleo lógico do WorldEdit__, contidos no diretório <a href="https://github.com/sk89q/WorldEdit/tree/master/worldedit-core/src/main/java/com/sk89q/worldedit">WorldEdit/worldedit-core/src/main/java/com/sk89q/worldedit/</a>, dentro do pacote worldedit-core, onde ocorre a 
 maior parte do processamento do plugin.
 
 <p align="center">
@@ -222,15 +222,20 @@ Isto permite com que haja um __reuso de código__ porque o núcleo da lógica no
 ### Conclusões e Análise Crítica
 
 É do entender de todos os membros do grupo que __as vistas apresentadas permitem uma boa compreensão da arquitetura do WorldEdit__.
+
 A vista lógica, expressa usando diagramas de packages, apresenta os blocos lógicos do programa e as suas interdependências. 
 Enquanto que, a mais alto nível	, os __principais pacotes da aplicação estão bem organizados__ (figura 1), __a mais baixo nível, 
 existe uma forte interdependência entre blocos lógicos__ (figura 2), o que __dificultou bastante a análise__ da arquitetura do programa 
 ao nível do pacote worldedit-core.
+
 Com a vista de implementação, apresentada com um diagrama de componentes, foi possível identificar uma __boa modularização do código__.
+
 Com vista de *deployment*, foi possível apresentar a __distribuição dos artefactos pelos componentes de hardware__. A organização do 
 programa a este nível é, na opinião da equipa, apropriado.
+
 Para a vista de processo, escolheu-se de apresentar a __sequência de passos desde o input por parte dos jogadores até à atualização
 do mundo__, sendo estas as principais atividades da aplicação.
+
 Para concluir, apesar de ter havido algumas dificuldades iniciais na análise da arquitetura, após uma análise mais minuciosa do
 código e do repositório, a __organização do sistema do WorldEdit foi bem entendida e adequa-se bem aos requisitos__ (funcionais e 
 não-funcionais) que foram identificados no segundo relatório.
