@@ -92,7 +92,7 @@ Vamos agora descrever a responsabilidade de cada módulo:
 A vista de implementação __mostra como é que o software pode ser decomposto em diferentes componentes que podem ser desenvolvidas em
 paralelo__ por um programador ou uma equipa de desenvolvimento.
  
-Na figura abaixo, apresenta-se o diagrama UML dos principais componentes do WorldEdit.
+Na figura abaixo, apresenta-se o diagrama UML dos principais componentes do WorldEdit. Os componentes externos estão marcados a cinzento.
 <p align="center">
     <img src="resources/R3/Component Diagram.png" alt="Diagrama UML de “components” do WorldEdit." />
     <em><br>Figura 3: Diagrama UML de “components” do WorldEdit.</em>
