@@ -221,3 +221,107 @@ ser testados aspetos específicos da plataforma Bukkit.
 	<img src="resources/R4/eclema3.png" alt="Cobertura do testes para o “package” worldedit-bukkit, em relação aos testes feitos especificamente para a plataforma Bukkit." />
 	<em><br>Figura 5: Cobertura do testes para o “package” worldedit-bukkit, em relação aos testes feitos especificamente para a plataforma Bukkit.</em>
 </p>
+
+Quanto ao mesmo tipo de testes mas para o __pacote relativo à plataforma Bukkit__, a __cobertura é bastante menor do que seria esperado__,
+sendo apenas de 5,7%. Esperava-se que esta percentagem fosse maior por este __pacote ser inteiramente dedicado à plataforma sobre 
+a qual os testes incidem__.
+
+Nas imagens seguintes podemos verificar a cobertura dos testes relativos ao código do pacote “core” do projeto.
+
+<p align="center">
+	<img src="resources/R4/eclema4.png" alt="Cobertura dos testes do worldedit-core para o “package” src." />
+	<em><br>Figura 6: Cobertura dos testes do worldedit-core para o “package” src.</em>
+</p>
+
+Em relação aos testes que exercitam o código das classes do package “worldedit-core”, existe um __total de 35 testes__ que produzem
+uma __cobertura de 7,1% no pacote “src” do projeto__, um valor bastante __mais baixo do que o esperado__. Alguns dos pacotes internos ao 
+“src” que têm maior número de instruções testadas são o “internal.expression.parser” e “blocks”.
+
+Uma __causa possível para esta percentagem ser tão baixa__ é que no ficheiro CONTRIBUTING.md, direcionado a toda a qualquer 
+pessoa que queira contribuir para o projeto, é referido que a __produção de testes unitários é opcional__. Como a lista de 
+diferentes contribuidores do projeto é bastante extensa, __não existe um grande controlo sobre a percentagem de contribuidores 
+que produz testes unitários__ e quem prefere não o fazer. 
+
+Podemos ainda observar, após correr o projeto na ferramenta Codacy, os *issues* do projeto, ou seja problemas, falhas, 
+inconsistências ou conflitos no código. 
+
+<p align="center">
+	<img src="resources/R4/codacy1.png" alt="Output the ferramenta de análise Codacy." />
+	<em><br>Figuras 7: Output the ferramenta de análise Codacy.</em>
+</p>
+
+<p align="center">
+	<img src="resources/R4/codacy2.png" alt="Output the ferramenta de análise Codacy." />
+	<em><br>Figuras 8: Output the ferramenta de análise Codacy.</em>
+</p>
+
+Desta forma podemos concluir que a __cobertura geral dos testes__ em qualquer dos pacotes principais do projeto (referente a 
+plataformas específicas ou ao pacote principal do projeto) é __atualmente baixa__. Deveria ser feito um esforço para aumentar 
+a quantidade e talvez a qualidade dos testes.
+
+
+### Relato da Correção do Bug
+
+Casos particulares do *bug* que encontrámos foram referidos no *issue tracker* do projeto 
+(http://dev.enginehub.org/youtrack/issue/WORLDEDIT-3450) (http://dev.enginehub.org/youtrack/issue/WORLDEDIT-3362) 
+(http://dev.enginehub.org/youtrack/issue/WORLDEDIT-2986). 
+
+Num destes *issues*, um desenvolvedor do projeto declara o problema como __não reproduzível__. É possível que a versão de então
+(há cerca de um ano, 17 de Setembro de 2015) não tivesse este *bug*, mas é facto que na versão atual, este __*bug* existe e é 
+facilmente reproduzível__. Com efeito, os autores deste relatório, após terem __identificado as secções do código ligados à 
+ocorrência do *bug*__ e de as terem analisado (análise estática), correram o Minecraft com o *plugin* do WorldEdit, usando a 
+plataforma Bukkit para __verificar em que condições o *bug* se manifestava__ (análise dinâmica). 
+
+O *bug* está presente no comando “center”. Este comando permite __associar um tipo de bloco ao centro de uma região selecionada__. 
+No entanto, o __comando nem sempre tinha o comportamento esperado__.
+
+Uma __descrição mais completa deste *bug* e da forma como este foi corrigido__ está disponível no *pull request*
+(https://github.com/sk89q/WorldEdit/pull/371) elaborado pelos autores deste relatório.
+
+O *bug* foi __corrigido com sucesso__, e após, efetuar algumas alterações à nossa correção, motivadas por sugestões por parte de 
+alguns dos principais contribuidores do projeto, o __*pull request* foi aceite pela comunidade do WorldEdit__.
+
+### Conclusões e Análise Crítica
+
+Em termos de testabilidade, apesar de haver uma forte interdependência entre módulos e uma fraca documentação de certas classes
+e sub-pacotes, o __projeto tem várias características que facilitam a verificação e validação do sistema__.
+
+Por um lado, o __projeto usa testes unitários e diversas ferramentas de suporte__  como JUnit, Mockito e TravisCI.
+
+Por outro lado, o projeto apresenta várias regras para contribuir que __impõem que o código seja bem documentado e que 
+seja escrito de forma homogénea__, o que contribui para uma __melhor inteligibilidade__.
+
+Neste projeto, as estatísticas não são muito favoráveis visto que os __testes unitários desenvolvidos têm uma cobertura muito 
+fraca do código__, como já discutido em secções anteriores.
+
+No entanto, devido ao ambiente sem risco e não-profissional do projeto, é compreensível não haver tanta dedicação a esse nível,
+mesmo que não seja o mais correto em termos de boas práticas de desenvolvimento de *software*.
+
+### Bibliografia
+- Slides das aulas teóricas
+- Software Engineering, Ian Sommerville, 9th Edition, capítulo 8.
+- Introduction to Software Testing, Paul Ammann, Jeff Offutt, 2nd Edition, capítulo 3.1. Disponível em: https://books.google.pt/books?id=bQtQDQAAQBAJ&pg=PA36&lpg=PA36&dq=software+observability&source=bl&ots=fxbM3-2WiQ&sig=CaObHiSrq32X0HDKHmna-Oalw6E&hl=en&sa=X&ved=0ahUKEwjfk_Dy2cnQAhVH_4MKHTWCAK8Q6AEIITAB#v=onepage&q=software%20observability&f=false
+- http://builds.enginehub.org/
+
+### Informações
+
+#### Autores
+- Andreia Rodrigues (up201404691@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 11 horas</p>
+- Eduardo Leite (gei12068@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 11 horas</p>
+- Francisco Queirós (up201404326@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 11 horas</p>
+- Gonçalo Leão (up201406036@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 11 horas</p>
+	
+Faculdade de Engenharia da Universidade do Porto - MIEIC
+
+3º ano, 1º semestre - Engenharia de Software
+
+2016-12-04
+
