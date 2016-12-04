@@ -12,7 +12,7 @@ A figura abaixo apresenta o V-Model de desenvolvimento de *software*. A imagem t
 do *software* ocorre em paralelo com todas as outras fases do seu desenvolvimento__.
 
 <p align="center">
-	<img src="resources/R4/v_model.png" alt="V-Model de desenvolvimento de software." />
+	<img src="resources/R4/V-model.png" alt="V-Model de desenvolvimento de software." />
 	<em><br>Figura 1: V-Model de desenvolvimento de software (Fonte: slides das aulas teóricas).</em>
 </p>
 
@@ -73,7 +73,7 @@ classes. Tratam-se de métodos interessantes para a controlabilidade pois __evit
 A figura abaixo apresenta um excerto de código de um dos ficheiros de teste que utiliza estes dois tipos de métodos, “Test” e “Before”.
 
 <p align="center">
-	<img src="resources/R4/codigo_teste.png" alt="Excerto de código de um dos ficheiros de teste, DinnerPermsResolverTest.java." />
+	<img src="resources/R4/mockito.png" alt="Excerto de código de um dos ficheiros de teste, DinnerPermsResolverTest.java." />
 	<em><br>Figura 2: Excerto de código de um dos ficheiros de teste, DinnerPermsResolverTest.java.</em>
 </p>
 
@@ -196,7 +196,7 @@ package “worldedit-core”__, enquanto que o outro __testa aspetos específico
 (https://github.com/up201406036/WorldEdit/tree/master/worldedit-bukkit/src/test/java/com/sk89q).
 
 <p align="center">
-	<img src="resources/R4/eclema1.png" alt="Estatísticas produzidas pelo EclEmma usando ambos os diretórios de teste." />
+	<img src="resources/R4/eclemma1.png" alt="Estatísticas produzidas pelo EclEmma usando ambos os diretórios de teste." />
 	<em><br>Figura 3: Estatísticas produzidas pelo EclEmma usando ambos os diretórios de teste.</em>
 </p>
 
@@ -208,7 +208,7 @@ reduzida que no “worldedit-core”.
 Nas seguintes imagens, podemos analisar os resultados dos testes mais em detalhe:
 
 <p align="center">
-	<img src="resources/R4/eclema2.png" alt="Cobertura do testes para o “package” worldedit-core, em relação aos testes feitos especificamente para a plataforma Bukkit." />
+	<img src="resources/R4/eclemma2.png" alt="Cobertura do testes para o “package” worldedit-core, em relação aos testes feitos especificamente para a plataforma Bukkit." />
 	<em><br>Figura 4: Cobertura do testes para o “package” worldedit-core, em relação aos testes feitos especificamente para a plataforma Bukkit.</em>
 </p>
 
@@ -218,7 +218,7 @@ Podemos observar que o __pacote “main” do projeto tem uma cobertura de apena
 ser testados aspetos específicos da plataforma Bukkit. 
 
 <p align="center">
-	<img src="resources/R4/eclema3.png" alt="Cobertura do testes para o “package” worldedit-bukkit, em relação aos testes feitos especificamente para a plataforma Bukkit." />
+	<img src="resources/R4/eclemma3.png" alt="Cobertura do testes para o “package” worldedit-bukkit, em relação aos testes feitos especificamente para a plataforma Bukkit." />
 	<em><br>Figura 5: Cobertura do testes para o “package” worldedit-bukkit, em relação aos testes feitos especificamente para a plataforma Bukkit.</em>
 </p>
 
@@ -229,7 +229,7 @@ a qual os testes incidem__.
 Nas imagens seguintes podemos verificar a cobertura dos testes relativos ao código do pacote “core” do projeto.
 
 <p align="center">
-	<img src="resources/R4/eclema4.png" alt="Cobertura dos testes do worldedit-core para o “package” src." />
+	<img src="resources/R4/eclemma4.png" alt="Cobertura dos testes do worldedit-core para o “package” src." />
 	<em><br>Figura 6: Cobertura dos testes do worldedit-core para o “package” src.</em>
 </p>
 
