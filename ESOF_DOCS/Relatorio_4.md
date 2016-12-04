@@ -143,3 +143,81 @@ parte dos autores deste relatório, no momento da elaboração do terceiro relat
 __Ao nível das classes, o projeto encontra-se melhor documentado__, dado que a maior parte das classes em worldedit-core usam notação 
 Javadoc para explicar o seu objetivo e dos seus métodos públicos. As classes dos três restantes pacotes principais (worldedit-bukkit,
 worldedit-forge e worldedit-sponge) não apresentam esta documentação em Javadoc.
+
+O ficheiro CONTRIBUTING.md (https://github.com/sk89q/WorldEdit/blob/master/CONTRIBUTING.md) especifica que, __para que um *pull request*
+seja aceite, todos os métodos públicos que sejam acrescentados têm de ser corretamente documentados com Javadoc__ (usando as notações 
+apropriadas como @param e @return). 
+
+Além disso, este ficheiro especifica um __conjunto de regras para que o código escrito seja o mais homogéneo possível__, o que facilita 
+a sua legibilidade. Estas regras não são triviais pois, dado que o projeto é *open-source*, o código desenvolvido vem de dezenas de
+contribuidores diferentes, cada um tendo os seus hábitos e costumes de escrita de código. Exemplos de regras incluem:
+ * seguir as "Oracle coding conventions"
+ * usar apenas espaços para indentação
+ * não exceder 120 caracteres em cada linha de código
+
+Assim, o inclusão do ficheiro CONTRIBUTING.md no repositório do projeto mostra que os contribuidores do projeto se preocupam que 
+o __código se mantenha compreensível__.
+
+
+#### Heterogeneidade
+
+A heterogeneidade refere-se a__ quanto o uso de diferentes tecnologias requer o uso em paralelo de diferentes métodos de teste
+de código e ferramentas__.
+
+Uma forte heterogeneidade traz a desvantagem de __adicionar pontos de falha no momento de teste do código__ pois as 
+ferramentas usadas podem falhar. Assim, torna-se necessário que os métodos de teste desenvolvidos estejam preparados 
+para lidar com este gênero de situações (lançando uma exceção especial ou executando um método de teste equivalente que
+não faça uso da ferramenta que falhou).  
+
+O projeto WorldEdit está __inerentemente assente sobre a API do jogo Minecraft__, dada a natureza do *software* que funciona
+como uma extensão do Minecraft (trata-se de um *plugin*). Isto cria uma __grande heterogeneidade no projecto__. 
+
+Além disso, o código apresenta a utilização das frameworks JUnit e Mockito para criar e executar código de teste e 
+criar__ facilidades para imitar funcionalidades do código a testar__, respetivamente.
+
+Dado que as ferramentas usadas pelo WorldEdit têm um bom grau de fiabilidade, os principais contribuidores do projeto consideram 
+seguro assumir que as ferramentas usadas funcionarão como esperado.
+
+
+### Estatísticas de teste
+
+A análise às estatísticas de teste obtidas a partir dos testes unitários permite perceber se estes foram __bem concebidos__ 
+(nomeadamente, se cobrem uma parte significativa do código, ou, pelo menos, os módulos mais utilizados, e se exercitam os 
+diversos blocos de código com diversos *input*) , se permitem uma __boa validação do código e a detecção de bugs__, e
+a __quantidade de código do projeto que foi testada__, o que é bastante importante para o sucesso de um projeto.
+
+As seguintes estatísticas dos testes unitários do WorldEdit foram obtidas usando as ferramentas JUnit e EclEmma, após termos 
+carregado o projeto no Eclipse. As estatísticas referem-se à __versão mais atual do repositório__ no dia 29 de fevereiro de 2016, 
+por volta das 12 horas.
+
+No repositório, existem dois diretórios de ficheiros de teste: um 
+(https://github.com/up201406036/WorldEdit/tree/master/worldedit-core/src/test/java/com/sk89q) __exercita classes do
+package “worldedit-core”__, enquanto que o outro __testa aspetos específicos ao código para a plataforma Bukkit__ 
+(https://github.com/up201406036/WorldEdit/tree/master/worldedit-bukkit/src/test/java/com/sk89q).
+
+<p align="center">
+	<img src="resources/R4/eclema1.png" alt="Estatísticas produzidas pelo EclEmma usando ambos os diretórios de teste." />
+	<em><br>Figura 3: Estatísticas produzidas pelo EclEmma usando ambos os diretórios de teste.</em>
+</p>
+
+Quanto ao diretório de testes específicos para a plataforma Bukkit, existem __apenas 5 testes__. Estes testes __cobrem apenas uma
+percentagem pequena do código__, tanto em relação ao “worldedit-core” (apenas 3,6%) como ao “worldedit-bukkit”(5,7%). Apesar da
+percentagem de código testado ser maior no caso do “worldedit-bukkit”, a quantidade de instruções deste pacote é muito mais 
+reduzida que no “worldedit-core”.
+
+Nas seguintes imagens, podemos analisar os resultados dos testes mais em detalhe:
+
+<p align="center">
+	<img src="resources/R4/eclema2.png" alt="Cobertura do testes para o “package” worldedit-core, em relação aos testes feitos especificamente para a plataforma Bukkit." />
+	<em><br>Figura 4: Cobertura do testes para o “package” worldedit-core, em relação aos testes feitos especificamente para a plataforma Bukkit.</em>
+</p>
+
+Em relação aos testes que __exercitam aspetos específicos ao código para a plataforma Bukkit no Core do projeto__, podemos observar
+as diferentes percentagens de cobertura distribuídas pelos pacotes cujo número total de instruções cobertas pelos testes é maior. 
+Podemos observar que o __pacote “main” do projeto tem uma cobertura de apenas 3,8%__, o que não é de estranhar por apenas estarem a 
+ser testados aspetos específicos da plataforma Bukkit. 
+
+<p align="center">
+	<img src="resources/R4/eclema3.png" alt="Cobertura do testes para o “package” worldedit-bukkit, em relação aos testes feitos especificamente para a plataforma Bukkit." />
+	<em><br>Figura 5: Cobertura do testes para o “package” worldedit-bukkit, em relação aos testes feitos especificamente para a plataforma Bukkit.</em>
+</p>
