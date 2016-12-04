@@ -76,3 +76,70 @@ A figura abaixo apresenta um excerto de código de um dos ficheiros de teste que
 	<img src="resources/R4/codigo_teste.png" alt="Excerto de código de um dos ficheiros de teste, DinnerPermsResolverTest.java." />
 	<em><br>Figura 2: Excerto de código de um dos ficheiros de teste, DinnerPermsResolverTest.java.</em>
 </p>
+
+#### Observabilidade
+
+A observabilidade mede a __facilidade de obter os resultados intermédios e finais dos testes efetuados__.
+
+Neste caso é possível distinguir dois casos:
+
+ * Nas funcionalidades que não interagem, ou interagem pouco, com o Minecraft, é mais fácil de observar se o 
+comportamento é o esperado, pois apesar de às vezes o grau de interdependência ser elevado, ainda existe um grau 
+de observabilidade aceitável.
+ * Nas funcionalidades que interagem directamente com o Minecraft, a tarefa torna-se mais complicada, pois às vezes 
+os __resultados só são observáveis no próprio Minecraft__. Como o WorldEdit tem como principal objectivo editar o mundo do Minecraft, 
+esta condição é muito frequente, levando a uma __observabilidade reduzida__ nestes casos.
+
+Para poder observar os resultados da execução dos testes unitários, uma possibilidade é importar o projeto para Eclipse,
+compilar o código usando o Gradle e correr os testes usando o JUnit. Desta forma, é possível aceder a várias informações
+sobre os testes realizados como que testes passaram e, caso seja usado uma ferramenta de análise de cobertura (como o EclEmma),
+determinar que percentagem de código de cada *subpackage* é que os métodos de teste cobrem.
+
+O WorldEdit também faz uso de uma ferramenta de *continuous integration* para testar a nova *codebase* com o fim de __encontrar
+potenciais erros__. Esta ferramenta, TravisCI, __funciona ao nível dos *commits* feitos no repositório__. Sempre que que é adicionado
+um *commit*, este passa por esta ferramenta que faz *build* do *source code* e depois testa o *output* com os testes com quais a ferramenta
+está configurada. Assim, o TravisCI __fornece observabilidade a uma escala mais global do projeto__.
+
+#### Isolabilidade
+
+A isolabilidade define __quão fácil é exercitar o componente sob teste de forma isolada__ (sem que os resultados dos testes
+sejam enviesados por outros componentes). 
+
+No caso do WorldEdit, a __isolabilidade é relativamente baixa__, visto que os componentes estão bastante interligados.
+
+Para compensar esta baixa isolabilidade, __o WorldEdit faz uso da ferramenta Mockito em algumas das suas classes de teste__.
+Esta ferramenta permite definir de forma fácil mock objects. Um mock object é um __objeto com o mesmo interface que os objetos
+externos a serem usados no método de teste e que simula as suas funcionalidades de forma previsível__. Assim, um mock object permite 
+que, ao testar um método de uma classe A que faça uso de um método de uma classe B, seja possível criar um mock object para a 
+classe B de forma a que eventuais erros na definição na classe B não interfiram nos resultados de teste sobre esse método da classe A.
+
+Um exemplo do uso do Mockito no WorldEdit é visível na figura 2, onde são criados mocks para as classes Server e PluginManager,
+para que a definição destas classes não interfira nos resultados dos testes sobre a classe DinnerPermsResolver.
+
+#### Separação de Funcionalidades
+
+A separação de funcionalidades indica o __quão bem estão definidas as responsabilidades do componente sob teste__.
+
+Na realização de projetos de dimensão elevada, é __importante garantir que cada funcionalidade fique o mais confinada possível
+ao componente que lhe está associado__, tentando torná-lo o mais modular possível. Se isto não acontecer, pode levar a um código
+confuso e mal estruturado, tornando mais difícil a sua compreensão e manutenção por parte dos diferentes contribuidores do projeto.
+
+No caso do *plugin* WorldEdit, tal como apresentado no terceiro relatório, os __componentes do projeto são bastante interdependentes__. 
+Mesmo assim, estes __têm por norma uma funcionalidade bem definida__, o que nos leva a dizer que existe um __nível intermédio__ de separação 
+de funcionalidades.
+
+#### Inteligibilidade
+
+A inteligibilidade indica o __quão um componente está bem documentado e é auto-explicativo__. 
+
+Trata-se de um parâmetro importante da testabilidade pois, quanto mais claro o código for, mais fácil é de o entender corretamente
+num menor espaço de tempo, sendo assim __mais simples escrever testes unitários para o exercitar ou de o corrigir__, caso tenha algum *bug*.
+
+Ao nível dos *packages*, é __apenas explicado o papel de cada um dos quatro pacotes principais do projeto__, em COMPILING.md 
+(https://github.com/up201406036/WorldEdit/blob/master/COMPILING.md). As funcionalidades dos sub-pacotes do projeto, nomeadamente 
+os do *package* worldedit-core, não são claramente indicadas, o que dificultou a tarefa de análise mais profunda do código, por 
+parte dos autores deste relatório, no momento da elaboração do terceiro relatório, relativo à arquitetura do *software*.
+
+__Ao nível das classes, o projeto encontra-se melhor documentado__, dado que a maior parte das classes em worldedit-core usam notação 
+Javadoc para explicar o seu objetivo e dos seus métodos públicos. As classes dos três restantes pacotes principais (worldedit-bukkit,
+worldedit-forge e worldedit-sponge) não apresentam esta documentação em Javadoc.
