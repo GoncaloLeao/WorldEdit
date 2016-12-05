@@ -161,7 +161,7 @@ o __código se mantenha compreensível__.
 
 #### Heterogeneidade
 
-A heterogeneidade refere-se a__ quanto o uso de diferentes tecnologias requer o uso em paralelo de diferentes métodos de teste
+A heterogeneidade refere-se a __quanto o uso de diferentes tecnologias requer o uso em paralelo de diferentes métodos de teste
 de código e ferramentas__.
 
 Uma forte heterogeneidade traz a desvantagem de __adicionar pontos de falha no momento de teste do código__ pois as 
@@ -173,7 +173,7 @@ O projeto WorldEdit está __inerentemente assente sobre a API do jogo Minecraft_
 como uma extensão do Minecraft (trata-se de um *plugin*). Isto cria uma __grande heterogeneidade no projecto__. 
 
 Além disso, o código apresenta a utilização das frameworks JUnit e Mockito para criar e executar código de teste e 
-criar__ facilidades para imitar funcionalidades do código a testar__, respetivamente.
+criar __facilidades para imitar funcionalidades do código a testar__, respetivamente.
 
 Dado que as ferramentas usadas pelo WorldEdit têm um bom grau de fiabilidade, os principais contribuidores do projeto consideram 
 seguro assumir que as ferramentas usadas funcionarão como esperado.
