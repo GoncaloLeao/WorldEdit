@@ -135,8 +135,7 @@ A inteligibilidade indica o __quão um componente está bem documentado e é aut
 Trata-se de um parâmetro importante da testabilidade pois, quanto mais claro o código for, mais fácil é de o entender corretamente
 num menor espaço de tempo, sendo assim __mais simples escrever testes unitários para o exercitar ou de o corrigir__, caso tenha algum *bug*.
 
-Ao nível dos *packages*, é __apenas explicado o papel de cada um dos quatro pacotes principais do projeto__, em COMPILING.md 
-(https://github.com/up201406036/WorldEdit/blob/master/COMPILING.md). As funcionalidades dos sub-pacotes do projeto, nomeadamente 
+Ao nível dos *packages*, é __apenas explicado o papel de cada um dos quatro pacotes principais do projeto__, em <a href="https://github.com/sk89q/WorldEdit/blob/master/COMPILING.md">COMPILING.md</a>. As funcionalidades dos sub-pacotes do projeto, nomeadamente 
 os do *package* worldedit-core, não são claramente indicadas, o que dificultou a tarefa de análise mais profunda do código, por 
 parte dos autores deste relatório, no momento da elaboração do terceiro relatório, relativo à arquitetura do *software*.
 
@@ -144,7 +143,7 @@ __Ao nível das classes, o projeto encontra-se melhor documentado__, dado que a 
 Javadoc para explicar o seu objetivo e dos seus métodos públicos. As classes dos três restantes pacotes principais (worldedit-bukkit,
 worldedit-forge e worldedit-sponge) não apresentam esta documentação em Javadoc.
 
-O ficheiro CONTRIBUTING.md (https://github.com/sk89q/WorldEdit/blob/master/CONTRIBUTING.md) especifica que, __para que um *pull request*
+O ficheiro <a href="https://github.com/sk89q/WorldEdit/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> especifica que, __para que um *pull request*
 seja aceite, todos os métodos públicos que sejam acrescentados têm de ser corretamente documentados com Javadoc__ (usando as notações 
 apropriadas como @param e @return). 
 
@@ -190,10 +189,8 @@ As seguintes estatísticas dos testes unitários do WorldEdit foram obtidas usan
 carregado o projeto no Eclipse. As estatísticas referem-se à __versão mais atual do repositório__ no dia 29 de fevereiro de 2016, 
 por volta das 12 horas.
 
-No repositório, existem dois diretórios de ficheiros de teste: um 
-(https://github.com/up201406036/WorldEdit/tree/master/worldedit-core/src/test/java/com/sk89q) __exercita classes do
-package “worldedit-core”__, enquanto que o outro __testa aspetos específicos ao código para a plataforma Bukkit__ 
-(https://github.com/up201406036/WorldEdit/tree/master/worldedit-bukkit/src/test/java/com/sk89q).
+No repositório, existem dois diretórios de ficheiros de teste: <a href="https://github.com/up201406036/WorldEdit/tree/master/worldedit-core/src/test/java/com/sk89q">um</a> __exercita classes do
+package “worldedit-core”__, enquanto que o <a href="https://github.com/up201406036/WorldEdit/tree/master/worldedit-bukkit/src/test/java/com/sk89q">outro</a> __testa aspetos específicos ao código para a plataforma Bukkit__.
 
 <p align="center">
 	<img src="resources/R4/eclemma1.png" alt="Estatísticas produzidas pelo EclEmma usando ambos os diretórios de teste." />
@@ -262,9 +259,7 @@ a quantidade e talvez a qualidade dos testes.
 
 ### Relato da Correção do Bug
 
-Casos particulares do *bug* que encontrámos foram referidos no *issue tracker* do projeto 
-(http://dev.enginehub.org/youtrack/issue/WORLDEDIT-3450) (http://dev.enginehub.org/youtrack/issue/WORLDEDIT-3362) 
-(http://dev.enginehub.org/youtrack/issue/WORLDEDIT-2986). 
+<a href="http://dev.enginehub.org/youtrack/issue/WORLDEDIT-3450">Casos</a> <a href="http://dev.enginehub.org/youtrack/issue/WORLDEDIT-3362">particulares</a> <a href="http://dev.enginehub.org/youtrack/issue/WORLDEDIT-2986">do</a> *bug* que encontrámos foram referidos no *issue tracker* do projeto. 
 
 Num destes *issues*, um desenvolvedor do projeto declara o problema como __não reproduzível__. É possível que a versão de então
 (há cerca de um ano, 17 de Setembro de 2015) não tivesse este *bug*, mas é facto que na versão atual, este __*bug* existe e é 
@@ -275,8 +270,7 @@ plataforma Bukkit para __verificar em que condições o *bug* se manifestava__ (
 O *bug* está presente no comando “center”. Este comando permite __associar um tipo de bloco ao centro de uma região selecionada__. 
 No entanto, o __comando nem sempre tinha o comportamento esperado__.
 
-Uma __descrição mais completa deste *bug* e da forma como este foi corrigido__ está disponível no *pull request*
-(https://github.com/sk89q/WorldEdit/pull/371) elaborado pelos autores deste relatório.
+Uma __descrição mais completa deste *bug* e da forma como este foi corrigido__ está disponível no <a href="https://github.com/sk89q/WorldEdit/pull/371">*pull request*</a> elaborado pelos autores deste relatório.
 
 O *bug* foi __corrigido com sucesso__, e após, efetuar algumas alterações à nossa correção, motivadas por sugestões por parte de 
 alguns dos principais contribuidores do projeto, o __*pull request* foi aceite pela comunidade do WorldEdit__.
@@ -300,7 +294,7 @@ mesmo que não seja o mais correto em termos de boas práticas de desenvolviment
 ### Bibliografia
 - Slides das aulas teóricas
 - Software Engineering, Ian Sommerville, 9th Edition, capítulo 8.
-- Introduction to Software Testing, Paul Ammann, Jeff Offutt, 2nd Edition, capítulo 3.1. Disponível em: https://books.google.pt/books?id=bQtQDQAAQBAJ&pg=PA36&lpg=PA36&dq=software+observability&source=bl&ots=fxbM3-2WiQ&sig=CaObHiSrq32X0HDKHmna-Oalw6E&hl=en&sa=X&ved=0ahUKEwjfk_Dy2cnQAhVH_4MKHTWCAK8Q6AEIITAB#v=onepage&q=software%20observability&f=false
+- Introduction to Software Testing, Paul Ammann, Jeff Offutt, 2nd Edition, capítulo 3.1. Disponível <a href="https://books.google.pt/books?id=bQtQDQAAQBAJ&pg=PA36&lpg=PA36&dq=software+observability&source=bl&ots=fxbM3-2WiQ&sig=CaObHiSrq32X0HDKHmna-Oalw6E&hl=en&sa=X&ved=0ahUKEwjfk_Dy2cnQAhVH_4MKHTWCAK8Q6AEIITAB#v=onepage&q=software%20observability&f=false">aqui</a>.
 - http://builds.enginehub.org/
 
 ### Informações
