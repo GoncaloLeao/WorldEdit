@@ -28,7 +28,7 @@ segunda versão, e por aí em diante, com novos lançamentos e alterações nece
 
 <p align="center">
 	<img src="resources/R5/spiral5.png" alt="Representação do processo de desenvolvimento e evolução de software como um ciclo." />
-	<em><br>Figura 1: Representação do processo de desenvolvimento e evolução de software como um ciclo (Fonte: Software Engineering, Ian Sommerville, 9th Edition, capítulo 9).</em>
+	<em><br>Figura 1: Representação do processo de desenvolvimento e evolução de software como uma espiral (Fonte: Software Engineering, Ian Sommerville, 9th Edition, capítulo 9).</em>
 </p>
 
 O seguimento deste relatório divide-se em duas principais seções.
