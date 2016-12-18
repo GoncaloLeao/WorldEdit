@@ -202,6 +202,9 @@ utilizadores sem as capacidades técnicas para usar as outras alternativas, o qu
 #### Componentes que implementam a feature a desenvolver
 
 A *feature* implementada pode ser decomposta em duas tarefas:
+ * __Receber os dados do seu comando e verificar se este respeita a sintaxe__ que lhe está associada.
+ * __Desenhar o hemisfério__, segundo os parâmetros do utilizador.
+ 
 Para determinarmos onde e o que alterar no projeto, decidimos __usar como base uma funcionalidade já antes existente__, o
 comando `//sphere`, visto que tinha um funcionamento bastante similar. Com a ajuda da funcionalidade “Find file” do Github, 
 encontrámos a função que cria a __interface entre a linha de comandos do Minecraft e o código do WorldEdit__, e daí analisamos
@@ -295,5 +298,3 @@ Faculdade de Engenharia da Universidade do Porto - MIEIC
 3º ano, 1º semestre - Engenharia de Software
 
 2016-12-18
- * __Receber os dados do seu comando e verificar se este respeita a sintaxe__ que lhe está associada.
- * __Desenhar o hemisfério__, segundo os parâmetros do utilizador.
