@@ -137,3 +137,70 @@ fácil de encontrar secções específicas de código__.
 A regra defende que __deve haver entre 2 e 12  componentes e que estes sejam de tamanho aproximadamente igual__. Para este segundo
 critério, é usado uma métrica chamada *component size uniformity*, que deve ser mantida abaixo de 0.71 (o cálculo desta métrica não 
 será apresentada, dada a sua complexidade).
+
+__O WorldEdit respeita este critério__ visto que __tem 5 componentes principais e o seu *component size uniformity* é de 0.68.__ Os 
+5 componentes identificados correspondem a worldedit-core, worldedit-forge, worldedit-sponge e worldedit-bukkit, mais o 
+pacote “contrib” (pacote de pequena dimensão que contém apenas código em Javascript para quatro *craftscripts*). Convém 
+salientar que o __Better Code Hub só analisou os pacotes principais, e não os seus sub-pacotes__ (nomeadamente os de worldedit-core),
+que, no entender dos autores deste relatório, seria mais interessante, visto que __é natural que o pacote worldedit-core tenha
+maior volume que os restantes pacotes por conter o código comum a cada plataforma suportada pelo WorldEdit__. 
+
+
+#### “Keep Your Codebase Small”
+
+Esta diretiva defende que __o volume total do código deve ser reduzido__, para que __mudanças estruturais ao código exijam menos esforço__.
+
+A regra defende que o __volume do projeto deve ser inferior a 20 *Man-years*.__ Um *Man-year* mede a quantidade de trabalho levado 
+a cabo por uma pessoa num ano. O Better Code Hub não especifica como é que a quantidade de *Man-Years* de um projeto é avaliado.
+
+Caso a diretiva não seja respeitada, o código pode ser *refactored* para obter a mesma funcionalidade em menos linhas de código, 
+ou podem ser usadas bibliotecas e *frameworks* externas para implementar certas funcionalidades mais elementares.
+
+__O WorldEdit respeita este critério__ dado que foi avaliado que o __projeto tinha 67 *Man-months*__, ou seja, cerca de 5,58 Man-years.
+
+#### “Automate tests”
+
+Esta diretiva defende que sejam __automatizados os testes para tornar o desenvolvimento de código mais previsível e seguro__.
+
+Para projetos de grande escala (que têm mais de 10.000 linhas de código), como é o caso do WorldEdit (que tem 49.212 linhas,
+segundo o Better Code Hub), a regra exige que o __número total de linhas de código de teste seja pelo menos 50% do número de
+linhas do restante código__, e que o *assert density* deve ser de pelo 5% (o Better Code Hub não especifica como é que esta métrica 
+é definida).
+
+__O WorldEdit não respeita esta diretiva__, visto que o __test code percentage é de apenas 2%, apesar do *assert density* ser de 17%__. 
+Estes valores devem-se ao facto que __não foram criados muitas classes de teste__ para exercitar o código, visto que as regras para
+contribuir para o projeto não inpõem que sejam criadas tais classes (tal como foi visto no relatório anterior).
+
+#### “Write Clean Code”
+
+Esta diretiva defende que __o código deve ser mantido limpo__, ou seja, __não deve conter *code smells*__. Exemplos de *code smells* incluem 
+*dead code* (uso de código que é executado mas cujo resultado não é usado) ou *duplicated code*.
+
+__O WorldEdit não respeita este princípio__ visto que o Better Code Hub __detetou a presença de alguns *code smells*__, como a presença de um
+bloco de código comentado em maze.js, do pacote contrib.
+
+### Processo de evolução de uma feature do WorldEdit
+
+#### Identificação da feature
+
+A *feature* implementada tem como funcionalidade a __criação de um hemisfério de *blocks*__. O comando para desenhar hemisférios
+tem como sintaxe __`//hemisphere <block> <radius>[,<radius>, <radius>]`__, onde os símbolos `<>` indicam uma variável e os símbolos 
+`[]` indicam um parâmetro opcional do comando. Os __raios opcionais permitem criar formas elípticas__. Também implementamos, 
+através do uso de *flags*, a __capacidade de inverter o hemisfério__ (sentido oposto) (`-i`) ou de, em vez de usar um sentido 
+pré definido, __usar a orientação da câmara do jogador como o sentido do hemisfério__ (`-p`). Nas funções __`//sphere`__ e __`//hsphere`__
+(para desenhar esferas cheias e ocas, respetivamente) também adicionamos a possibilidade de usar uma flag `-s` juntamente
+com as flags já referidas para dar várias formas de chegar ao mesmo efeito e ser mais cômodo para o utilizador.
+
+Esta ideia veio de um *thread* do fórum do projecto (<a href="http://forum.enginehub.org/threads/half-a-sphere-a-dome.168/")>http://forum.enginehub.org/threads/half-a-sphere-a-dome.168/</a>). Dado que os
+requisitos da *feature* eram simples de entender e o *plugin* já era capaz de desenhar outras formas (nomeadamente esferas), os 
+autores deste relatório acharam que esta *feature* seria interessante de implementar.
+
+__Embora haja outras formas  de chegar ao efeito__ (criar uma esfera e manualmente tirar uma das metades, usar ferramentas avançadas 
+de geração de volumes usando expressões matemáticas), __uma ferramenta especializada é mais cómoda e fácil__, especialmente para
+utilizadores sem as capacidades técnicas para usar as outras alternativas, o que é bastante típico da demografia do Minecraft.
+
+#### Componentes que implementam a feature a desenvolver
+
+A *feature* implementada pode ser decomposta em duas tarefas:
+ * __Receber os dados do seu comando e verificar se este respeita a sintaxe__ que lhe está associada.
+ * __Desenhar o hemisfério__, segundo os parâmetros do utilizador.
