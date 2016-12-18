@@ -202,5 +202,98 @@ utilizadores sem as capacidades técnicas para usar as outras alternativas, o qu
 #### Componentes que implementam a feature a desenvolver
 
 A *feature* implementada pode ser decomposta em duas tarefas:
+Para determinarmos onde e o que alterar no projeto, decidimos __usar como base uma funcionalidade já antes existente__, o
+comando `//sphere`, visto que tinha um funcionamento bastante similar. Com a ajuda da funcionalidade “Find file” do Github, 
+encontrámos a função que cria a __interface entre a linha de comandos do Minecraft e o código do WorldEdit__, e daí analisamos
+as funções invocadas.
+
+##### Componente de interpretação dos comandos
+
+Na classe GenerationCommands (<a href="worldedit-core/src/main/java/com/sk89q/worldedit/command/GenerationCommands.java")>worldedit-core/src/main/java/com/sk89q/worldedit/command/GenerationCommands.java</a>), 
+existem os métodos *sphere* e *hsphere* que criam uma esfera e uma esfera oca e estão associados aos comandos `//sphere` e `//hsphere`,
+respectivamente. __Alteramos estas funções para suportarem hemisférios através de “flags” para acionar os mecanismos__. A *flag* 
+__`-s` ativa o mecanismo de hemisfério__. Com esta *flag*, podem-se usar as *flags* `-p` e `-i`, faladas anteriormente, caso contrário é 
+mostrada uma mensagem de erro ao jogador.
+
+Também, nessa mesma classe __implementamos um método que serve como o recetor para o comando `//hemisphere`__ e que age como interface
+entre os comandos `//hemisphere` e `//sphere` (visto que se houver um método que entende todos os casos, reduz-se código duplicado). 
+
+##### Componente de desenho de hemisférios
+
+Na classe EditSession (<a href="worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java")>worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java</a>), 
+existe o método *makeSphere* que altera o mundo do Minecraft para __adicionar uma esfera com os parâmetros que é lhe são dados__.
+
+Também, nessa mesma classe __implementamos um método que serve como o recetor para o comando `//hemisphere`__ e que age como interface
+entre os comandos `//hemisphere` e `//sphere` (visto que se houver um método que entende todos os casos, reduz-se código duplicado). 
+
+
+##### Componente de desenho de hemisférios
+
+Na classe EditSession (<a href="worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java")>worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java</a>), 
+existe o método *makeSphere* que __altera o mundo do Minecraft para adicionar uma esfera__ com os parâmetros que é lhe são dados.
+
+__Alteramos esta função para aceitar os novos parâmetros que criamos__ e depois usamos estes novos parâmetros para criar __restrições 
+nos blocos a gerar de forma a que crie um hemisfério como especificado__.
+
+Colocando apenas a configuração de hemisfério (`//hemisphere` ou outros comandos com a flag `-s`), limitamos o código a apenas gerar 
+blocos cuja a diferença no y (vertical) seja positiva, ou seja, a gerar um hemisfério apontado para cima. Com a flag `-i`, ocorre
+um efeito semelhante mas com a diferença no y sendo negativa. Com apenas a flag `-p`, utilizamos uma funcionalidade já implementada
+pela equipa do WorldEdit para adquirir o vetor para onde o jogador está apontado e apenas geramos os blocos cujo o produto escalar
+do vetor que constitui a diferença entre o bloco e o centro e o vetor para onde o jogador está apontado seja maior ou igual a 0.
+Se misturarmos as flags `-p` e `-i` é o mesmo que a *flag* `-p` mas invertemos o vetor para onde o jogador está apontado.
+
+Também tivemos de __alterar outros métodos que dependem do método *makeSphere*__, simplesmente para haver uma __compatibilidade entre 
+a quantidade e tipos dos argumentos usados para invocar a função__, mantendo o comportamento destas funções igual.
+
+É importante notar que nenhuma alteração nossa altera o funcionamento de casos de utilização já existentes.
+
+#### Pull request
+
+Após ter implementado e devidamente testado a nova funcionalidade, os autores deste relatório criaram um *pull request* (<a href="https://github.com/sk89q/WorldEdit/pull/374")>https://github.com/sk89q/WorldEdit/pull/374</a>), para que acrescentar o nova código ao projeto.
+
+Após efetuadas algumas mudanças ao código da *feature*, sugeridos por alguns dos principais contribuidores do WorldEdit 
+(nomeadamente para permitir o desenho de hemisférios invertidos) é com grande satisfação que os autores deste relatório 
+declaram que __o *pull request* foi aceite pela comunidade__!
+
+### Conclusões e Análise Crítica
+
+Para concluir, o facto que __o WorldEdit não respeita grande parte das diretivas BMS pode-se dever à natureza *open-source* do projeto__.
+Com efeito, dado que há __dezenas de colaboradores__ a contribuir para a evolução do programa, é mais __difícil controlar a evolução do 
+*software* e a sua manutenibilidade__, nomeadamente no que toca ao aumento do volume de código e a código duplicado.
+
+Relativamente à *feature* implementada, apesar da sua __implementação ter exigido algum esforço__ (sobretudo para satisfazer os novos
+requisitos que os contribuidores iam sugerindo no *pull request*), as dificuldades foram ultrapassadas dado que se usou o código
+para a desenho de esferas como guia. Esta contribuição permitiu aos autores deste relatório __compreender melhor como é possível
+contribuir para um projeto já com um tempo de existência e número de colaboradores considerável__, mesmo que não se conheça todo 
+o seu código em detalhe.
+
+### Bibliografia
+- Slides das aulas teóricas
+- Software Engineering, Ian Sommerville, 9th Edition, capítulo 9.
+- Building Maintainable Software, Java Edition, Ten Guidelines for Future-Proof Code, Joost Visser, Sylvan Rigal, Rob van der Leek, Pascal van Eck, Gijs Wijnholds.
+- <a href="https://sourcemaking.com/refactoring/replace-conditional-with-polymorphism">Explicação da técnica “Replace Conditional with Polymorphism”</a>
+- http://builds.enginehub.org/
+
+### Informações
+
+#### Autores
+- Andreia Rodrigues (up201404691@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 7 horas</p>
+- Eduardo Leite (gei12068@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 7 horas</p>
+- Francisco Queirós (up201404326@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 7 horas</p>
+- Gonçalo Leão (up201406036@fe.up.pt)
+	<p>Percentagem de contribuição: 25%</p>
+	<p>Número aproximado de horas de trabalho: 7 horas</p>
+	
+Faculdade de Engenharia da Universidade do Porto - MIEIC
+
+3º ano, 1º semestre - Engenharia de Software
+
+2016-12-18
  * __Receber os dados do seu comando e verificar se este respeita a sintaxe__ que lhe está associada.
  * __Desenhar o hemisfério__, segundo os parâmetros do utilizador.
