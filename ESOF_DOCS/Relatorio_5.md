@@ -27,7 +27,7 @@ O processo tem início com a primeira versão do sistema. Uma vez entregue, são
 segunda versão, e por aí em diante, com novos lançamentos e alterações necessárias que vão ser implementadas no seguinte.
 
 <p align="center">
-	<img src="resources/R5/1.png" alt="Representação do processo de desenvolvimento e evolução de software como um ciclo." />
+	<img src="resources/R5/spiral5.png" alt="Representação do processo de desenvolvimento e evolução de software como um ciclo." />
 	<em><br>Figura 1: Representação do processo de desenvolvimento e evolução de software como um ciclo (Fonte: Software Engineering, Ian Sommerville, 9th Edition, capítulo 9).</em>
 </p>
 
