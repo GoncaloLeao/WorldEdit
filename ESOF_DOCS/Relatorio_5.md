@@ -61,6 +61,6 @@ e uma parte significativa destas unidades ultrapassa 60 linhas de código.
 
 Em particular, a classe BlockData do pacote com.sk89q.worldedit.blocks (em worldedit-core), responsável por manipular os dados 
 contidos nos blocos constituintes do mundo Minecraft, apresenta vários métodos que excedem, por uma grande margem, o limite de 15 
-linhas de código. A título de exemplo, o método “public static int flip(int type, int data, FlipDirection direction)” ocupa 320 
+linhas de código. A título de exemplo, o método <code> public static int flip(int type, int data, FlipDirection direction) </code> ocupa 320 
 linhas de código. Isto deve-se ao método incluir uma estrutura “switch … case” para lidar com os diferentes tipos de bloco (tochas, 
 portas de madeira, etc).
