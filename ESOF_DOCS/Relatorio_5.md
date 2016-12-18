@@ -45,6 +45,8 @@ segue as dez diretivas do “Building Maintainable Software: Ten Guidelines for 
 __Das dez diretivas BMS__, segundo o Better Code Hub, __o WorldEdit respeita apenas três delas__: “Keep Architecture Components Balanced”,
 “Keep your codebase small” e “Write Clean Code”.
 
+Os resultados da análise da manutenibilidade estão apresentados <a href="resources/R5/BetterCodeHub.pdf">aqui</a>.
+
 Vamos agora, de forma sucinta, apresentar as dez diretivas BMS e explicar porque é que estas são ou não respeitadas pelo WorldEdit. 
 
 #### “Write Short Units of Code” 
@@ -191,7 +193,7 @@ pré definido, __usar a orientação da câmara do jogador como o sentido do hem
 (para desenhar esferas cheias e ocas, respetivamente) também adicionamos a possibilidade de usar uma flag `-s` juntamente
 com as flags já referidas para dar várias formas de chegar ao mesmo efeito e ser mais cômodo para o utilizador.
 
-Esta ideia veio de um *thread* do fórum do projecto (<a href="http://forum.enginehub.org/threads/half-a-sphere-a-dome.168/")>http://forum.enginehub.org/threads/half-a-sphere-a-dome.168/</a>). Dado que os
+Esta ideia veio de um <a href="http://forum.enginehub.org/threads/half-a-sphere-a-dome.168/")>*thread*</a> do fórum do projecto. Dado que os
 requisitos da *feature* eram simples de entender e o *plugin* já era capaz de desenhar outras formas (nomeadamente esferas), os 
 autores deste relatório acharam que esta *feature* seria interessante de implementar.
 
@@ -212,7 +214,7 @@ as funções invocadas.
 
 ##### Componente de interpretação dos comandos
 
-Na classe GenerationCommands (<a href="worldedit-core/src/main/java/com/sk89q/worldedit/command/GenerationCommands.java")>worldedit-core/src/main/java/com/sk89q/worldedit/command/GenerationCommands.java</a>), 
+Na classe GenerationCommands (worldedit-core/src/main/java/com/sk89q/worldedit/command/GenerationCommands.java), 
 existem os métodos *sphere* e *hsphere* que criam uma esfera e uma esfera oca e estão associados aos comandos `//sphere` e `//hsphere`,
 respectivamente. __Alteramos estas funções para suportarem hemisférios através de “flags” para acionar os mecanismos__. A *flag* 
 __`-s` ativa o mecanismo de hemisfério__. Com esta *flag*, podem-se usar as *flags* `-p` e `-i`, faladas anteriormente, caso contrário é 
@@ -223,7 +225,7 @@ entre os comandos `//hemisphere` e `//sphere` (visto que se houver um método qu
 
 ##### Componente de desenho de hemisférios
 
-Na classe EditSession (<a href="worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java")>worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java</a>), 
+Na classe EditSession (worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java), 
 existe o método *makeSphere* que __altera o mundo do Minecraft para adicionar uma esfera__ com os parâmetros que é lhe são dados.
 
 __Alteramos esta função para aceitar os novos parâmetros que criamos__ e depois usamos estes novos parâmetros para criar __restrições 
@@ -243,7 +245,7 @@ a quantidade e tipos dos argumentos usados para invocar a função__, mantendo o
 
 #### Pull request
 
-Após ter implementado e devidamente testado a nova funcionalidade, os autores deste relatório criaram um *pull request* (<a href="https://github.com/sk89q/WorldEdit/pull/374")>https://github.com/sk89q/WorldEdit/pull/374</a>), para que acrescentar o nova código ao projeto.
+Após ter implementado e devidamente testado a nova funcionalidade, os autores deste relatório criaram um <a href="https://github.com/sk89q/WorldEdit/pull/374")>*pull request*</a>, para que acrescentar o nova código ao projeto.
 
 Após efetuadas algumas mudanças ao código da *feature*, sugeridos por alguns dos principais contribuidores do WorldEdit 
 (nomeadamente para permitir o desenho de hemisférios invertidos) é com grande satisfação que os autores deste relatório 
