@@ -224,15 +224,6 @@ entre os comandos `//hemisphere` e `//sphere` (visto que se houver um método qu
 ##### Componente de desenho de hemisférios
 
 Na classe EditSession (<a href="worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java")>worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java</a>), 
-existe o método *makeSphere* que altera o mundo do Minecraft para __adicionar uma esfera com os parâmetros que é lhe são dados__.
-
-Também, nessa mesma classe __implementamos um método que serve como o recetor para o comando `//hemisphere`__ e que age como interface
-entre os comandos `//hemisphere` e `//sphere` (visto que se houver um método que entende todos os casos, reduz-se código duplicado). 
-
-
-##### Componente de desenho de hemisférios
-
-Na classe EditSession (<a href="worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java")>worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java</a>), 
 existe o método *makeSphere* que __altera o mundo do Minecraft para adicionar uma esfera__ com os parâmetros que é lhe são dados.
 
 __Alteramos esta função para aceitar os novos parâmetros que criamos__ e depois usamos estes novos parâmetros para criar __restrições 
