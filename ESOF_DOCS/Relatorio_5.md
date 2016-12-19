@@ -219,7 +219,7 @@ as funções invocadas.
 
 ##### Componente de interpretação dos comandos
 
-Na classe GenerationCommands (worldedit-core/src/main/java/com/sk89q/worldedit/command/GenerationCommands.java), 
+Na classe <a href="https://github.com/sk89q/WorldEdit/blob/master/worldedit-core/src/main/java/com/sk89q/worldedit/command/GenerationCommands.java">GenerationCommands</a>, 
 existem os métodos *sphere* e *hsphere* que criam uma esfera e uma esfera oca e estão associados aos comandos `//sphere` e `//hsphere`,
 respectivamente. __Alteramos estas funções para suportarem hemisférios através de “flags” para acionar os mecanismos__. A *flag* 
 __`-s` ativa o mecanismo de hemisfério__. Com esta *flag*, podem-se usar as *flags* `-p` e `-i`, faladas anteriormente, caso contrário é 
@@ -230,7 +230,7 @@ entre os comandos `//hemisphere` e `//sphere` (visto que se houver um método qu
 
 ##### Componente de desenho de hemisférios
 
-Na classe EditSession (worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java), 
+Na classe <a href="https://github.com/sk89q/WorldEdit/blob/master/worldedit-core/src/main/java/com/sk89q/worldedit/EditSession.java">EditSession</a>, 
 existe o método *makeSphere* que __altera o mundo do Minecraft para adicionar uma esfera__ com os parâmetros que é lhe são dados.
 
 __Alteramos esta função para aceitar os novos parâmetros que criamos__ e depois usamos estes novos parâmetros para criar __restrições 
