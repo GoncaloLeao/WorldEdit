@@ -193,6 +193,11 @@ pré definido, __usar a orientação da câmara do jogador como o sentido do hem
 (para desenhar esferas cheias e ocas, respetivamente) também adicionamos a possibilidade de usar uma flag `-s` juntamente
 com as flags já referidas para dar várias formas de chegar ao mesmo efeito e ser mais cômodo para o utilizador.
 
+<p align="center">
+	<img src="resources/R5/hemis.png" alt="Alguns hemisférios desenhados usando os novos comandos." />
+	<em><br>Figura 2: Alguns hemisférios desenhados usando os novos comandos.</em>
+</p>
+
 Esta ideia veio de um <a href="http://forum.enginehub.org/threads/half-a-sphere-a-dome.168/")>*thread*</a> do fórum do projecto. Dado que os
 requisitos da *feature* eram simples de entender e o *plugin* já era capaz de desenhar outras formas (nomeadamente esferas), os 
 autores deste relatório acharam que esta *feature* seria interessante de implementar.
