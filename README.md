@@ -34,3 +34,4 @@ Links
 * [Issue tracker](http://youtrack.sk89q.com/issues/WORLDEDIT)
 * [Continuous integration](http://builds.enginehub.org) [![Build Status](https://travis-ci.org/sk89q/WorldEdit.svg?branch=master)](https://travis-ci.org/sk89q/WorldEdit)
 * [End-user documentation](http://wiki.sk89q.com/wiki/WorldEdit)
+* [BCH compliance![BCH compliance](https://bettercodehub.com/edge/badge/up201406036/WorldEdit)](https://bettercodehub.com)
